@@ -255,7 +255,8 @@
 <p>设$x$是实数，$|x|&lt;1$，$u$是实数，那么</p>
 <p>$(1+x)^u=\sum_{k=0}^{\infty}\dbinom{u}{k}x^k$</p>
 <h4 id="常用生成函数"><a href="#常用生成函数" class="headerlink" title="常用生成函数"></a>常用生成函数</h4><p>$\begin{aligned} &amp;\frac{1-x^{n+1}}{1-x}=\sum_{k=0}^{n}x^k\\<br>&amp;\\<br>&amp;\frac{1}{1-ax}=\sum_{k=0}^{\infty}a^kx^k\\<br>&amp;\\<br>&amp;\frac{1}{(1-x)^2}=\sum_{k=0}^{\infty}(k+1)x^k\\<br>&amp;\\<br>&amp;\frac{1}{(1-x)^n}=\sum_{k=0}^{\infty}C_{n+k-1}^{k}x^k\\<br>&amp;\\<br>&amp;\frac{1}{(1+x)^n}=\sum_{k=0}^{\infty}C_{n+k-1}^{k}(-1)^kx^k \end{aligned}$</p>
-<h3 id="特殊计数序列"><a href="#特殊计数序列" class="headerlink" title="特殊计数序列"></a>特殊计数序列</h3><h4 id="Catalan数列"><a href="#Catalan数列" class="headerlink" title="Catalan数列"></a>Catalan数列</h4><p>前几项：$1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, 208012, ……$即$c[0]=1,c[1]=1,c[2]=2…$</p>
+<h3 id="特殊计数序列"><a href="#特殊计数序列" class="headerlink" title="特殊计数序列"></a>特殊计数序列</h3><h4 id="Catalan数列"><a href="#Catalan数列" class="headerlink" title="Catalan数列"></a>Catalan数列</h4><p>前几项：$1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, 208012, ……$</p>
+<p>即$c[0]=1,c[1]=1,c[2]=2…$</p>
 <p>$\begin{aligned} &amp;递推式1：f[n]=\sum_{i=0}^{n-1}f[i]*f[n-i-1]\\<br>&amp;递推式2：f[n]=\frac{4n-2}{n+1}f[n-1]\\<br>&amp;组合式1：f[n]=\frac{C_{2n}^{n}}{n+1}\\<br>&amp;组合式2：f[n] = C_{2n}^{n}-C_{2n}^{n-1} \end{aligned}$</p>
 <p>应用：</p>
 <ol>
