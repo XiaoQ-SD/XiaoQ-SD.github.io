@@ -28,7 +28,7 @@
 <meta property="og:description" content="Hexo基础常用指令123456$ hexo new &lt;title&gt;      # 创建新文章 目录于 \source\_post 下$ hexo new post &lt;title&gt; # 创建新文章 目录于 \source\_post 下$ hexo clean$ hexo server   # hexo s$ hexo generate # hexo g$ hexo dep">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-16T07:06:30.881Z">
-<meta property="article:modified_time" content="2021-04-20T12:48:01.300Z">
+<meta property="article:modified_time" content="2021-04-22T10:11:54.282Z">
 <meta property="article:author" content="Yang Jiaqi">
 <meta property="article:tag" content="blogs">
 <meta name="twitter:card" content="summary">
@@ -224,7 +224,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-20 20:48:01" itemprop="dateModified" datetime="2021-04-20T20:48:01+08:00">2021-04-20</time>
+                <time title="修改时间：2021-04-22 18:11:54" itemprop="dateModified" datetime="2021-04-22T18:11:54+08:00">2021-04-22</time>
               </span>
 
           
@@ -239,13 +239,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>4.9k</span>
+              <span>5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>4 分钟</span>
+              <span>5 分钟</span>
             </span>
 
         </div>
@@ -258,13 +258,10 @@
 
       
         <h2 id="Hexo基础"><a href="#Hexo基础" class="headerlink" title="Hexo基础"></a>Hexo基础</h2><h3 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new &lt;title&gt;      <span class="comment"># 创建新文章 目录于 \source\_post 下</span></span><br><span class="line">$ hexo new post &lt;title&gt; <span class="comment"># 创建新文章 目录于 \source\_post 下</span></span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo server   <span class="comment"># hexo s</span></span><br><span class="line">$ hexo generate <span class="comment"># hexo g</span></span><br><span class="line">$ hexo deploy   <span class="comment"># hexo d</span></span><br></pre></td></tr></table></figure>
-
-
-
+<p>文件头所包含内容</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标题</span><br><span class="line">urlname: URL内容</span><br><span class="line">tags: </span><br><span class="line"><span class="bullet">-</span> tag1</span><br><span class="line"><span class="bullet">-</span> tag2</span><br><span class="line">mathjax: true/false</span><br><span class="line">description: 概述</span><br><span class="line">passward: 密码内容</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 <h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">OpenSSL SSL_read: Connection was reset, errno 10054</span><br><span class="line"><span class="comment"># 解决方案</span></span><br><span class="line">$ git config --global http.sslVerify <span class="string">&quot;false&quot;</span></span><br><span class="line"></span><br><span class="line">Failed to connect to github.com port 443: Timed out</span><br><span class="line"><span class="comment"># 解决方案</span></span><br><span class="line"><span class="comment"># 取消代理</span></span><br><span class="line">$ git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">$ git config --global --<span class="built_in">unset</span> https.proxy</span><br><span class="line"></span><br><span class="line">fatal: the remote end hung up unexpectedly</span><br><span class="line">Everything up-to-date</span><br><span class="line"><span class="comment"># 解决方案</span></span><br><span class="line"><span class="comment"># 尚不明确 重新链接网络</span></span><br></pre></td></tr></table></figure>
-
 <span id="more"></span>
-
 <h3 id="配置文件解析"><a href="#配置文件解析" class="headerlink" title="配置文件解析"></a>配置文件解析</h3><p>\hexo\_config.yml hexo站点配置解析，参考：</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/loze/article/details/94209583">https://blog.csdn.net/loze/article/details/94209583</a></p>
 <p>\hexo\themes\next\_config.yml next主题配置解析，参考：</p>
@@ -272,91 +269,42 @@
 <h3 id="修改页面图标"><a href="#修改页面图标" class="headerlink" title="修改页面图标"></a>修改页面图标</h3><p>放置图标的位置为 \theme\next\sources\images 目录下，需要 small 和 medium 两种。</p>
 <p>在 themes\next\_config.yml 的 favicon 处修改</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/yjq.ico</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/yjq.jpg</span></span><br><span class="line">  <span class="attr">apple_touch_icon:</span> <span class="string">/images/apple-touch-icon-next.png</span></span><br><span class="line">  <span class="attr">safari_pinned_tab:</span> <span class="string">/images/logo.svg</span></span><br><span class="line">  <span class="comment">#android_manifest: /images/manifest.json</span></span><br><span class="line">  <span class="comment">#ms_browserconfig: /images/browserconfig.xml</span></span><br></pre></td></tr></table></figure>
-
-
-
 <h3 id="修改menu"><a href="#修改menu" class="headerlink" title="修改menu"></a>修改menu</h3><p>在 themes\next\_config.yml 的 menu 处修改，删除部分 # 以开启功能。</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Usage: `Key: /link/ || icon`</span></span><br><span class="line"><span class="comment"># Key is the name of menu item. If the translation for this item is available, the translated text will be loaded, otherwise the Key name will be used. Key is case-senstive.</span></span><br><span class="line"><span class="comment"># Value before `||` delimiter is the target link, value after `||` delimiter is the name of Font Awesome icon.</span></span><br><span class="line"><span class="comment"># When running the site in a subdirectory (e.g. yoursite.com/blog), remove the leading slash from link value (/archives -&gt; archives).</span></span><br><span class="line"><span class="comment"># External url should start with http:// or https://</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || fa fa-sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || fa fa-heartbeat</span></span><br><span class="line">  </span><br><span class="line"><span class="comment"># Enable / Disable menu icons / item badges.</span></span><br><span class="line"><span class="attr">menu_settings:</span></span><br><span class="line">  <span class="attr">icons:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">badges:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-
-
 <p>接下来需要创建相关页面：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page <span class="string">&quot;about&quot;</span></span><br><span class="line">$ hexo new page <span class="string">&quot;tags&quot;</span></span><br><span class="line">$ hexo new page <span class="string">&quot;categories&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
 <p>在生成的 markdown 文件中作出修改：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: 2019-06-25 19:16:17</span><br><span class="line">type: &quot;about&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
 <p>tag 与 categories 的修改类似。</p>
 <h3 id="文章链接"><a href="#文章链接" class="headerlink" title="文章链接"></a>文章链接</h3><p>在 _config.yml 的 # URL 处做出如下修改</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://xiaoq-sd.github.io/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:urlname/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line">  <span class="attr">urlname:</span> <span class="string">index</span> <span class="comment"># 添加默认</span></span><br><span class="line"><span class="attr">pretty_urls:</span></span><br><span class="line">  <span class="attr">trailing_index:</span> <span class="literal">true</span> <span class="comment"># Set to false to remove trailing &#x27;index.html&#x27; from permalinks</span></span><br><span class="line">  <span class="attr">trailing_html:</span> <span class="literal">true</span> <span class="comment"># Set to false to remove trailing &#x27;.html&#x27; from permalinks</span></span><br></pre></td></tr></table></figure>
-
-
-
 <p>默认使用 :title 生成URL，但 title 的名称可能会是中文。</p>
 <p>不妨添加一个 urlname，用以生成 URL。</p>
 <p>因此，在文章中应添加：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo基础</span><br><span class="line">urlname: direction-for-use</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h3 id="配置搜索文件"><a href="#配置搜索文件" class="headerlink" title="配置搜索文件"></a>配置搜索文件</h3><p>首先安装插件：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
-
-
-
 <p>在 _config.yml 的 # Extensions 后面添加</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 搜索</span></span><br><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
-
-
-
 <p>在 themes\next\_config.yml 的 Local Search 处修改</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Local Search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-generator-searchdb</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># 此处修改为 true</span></span><br></pre></td></tr></table></figure>
-
-
-
 <h3 id="文章字数统计，阅读时长"><a href="#文章字数统计，阅读时长" class="headerlink" title="文章字数统计，阅读时长"></a>文章字数统计，阅读时长</h3><p>添加插件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm i --save hexo-wordcount</span><br><span class="line">$ npm install hexo-wordcount@2 --save <span class="comment"># 可选？</span></span><br></pre></td></tr></table></figure>
-
-
-
 <p>在 themes\next\_config.yml 的 # post wordcount 处修改</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 前面的功能注释掉</span></span><br><span class="line"><span class="comment"># Post wordcount display settings</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-symbols-count-time</span></span><br><span class="line"><span class="comment">#symbols_count_time:</span></span><br><span class="line"><span class="comment">#  separated_meta: true</span></span><br><span class="line"><span class="comment">#  item_text_post: true</span></span><br><span class="line"><span class="comment">#  item_text_total: true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 新添加的内容</span></span><br><span class="line"><span class="comment"># Post wordcount display settings</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/willin/hexo-wordcount</span></span><br><span class="line"><span class="attr">post_wordcount:</span></span><br><span class="line">  <span class="attr">item_text:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">wordcount:</span> <span class="literal">true</span>         <span class="comment"># 单篇 字数统计</span></span><br><span class="line">  <span class="attr">min2read:</span> <span class="literal">true</span>          <span class="comment"># 单篇 阅读时长</span></span><br><span class="line">  <span class="attr">totalcount:</span> <span class="literal">true</span>        <span class="comment"># 网站 字数统计</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">true</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
 <h3 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要"></a>文章摘要</h3><p>文章截断方法，在需要截断的地方添加</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&lt;!--more--&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
 <p>文章首部写概述</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: </span><br><span class="line">date: </span><br><span class="line">description: 概述位置</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-
-
 <h3 id="统计访客"><a href="#统计访客" class="headerlink" title="统计访客"></a>统计访客</h3><p>在 themes\next\_config.yml 的 busuanzi_count 处修改</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Show Views / Visitors of the website / page with busuanzi.</span></span><br><span class="line"><span class="comment"># Get more information on http://ibruce.info/2015/04/04/busuanzi</span></span><br><span class="line"><span class="attr">busuanzi_count:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_visitors:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_visitors_icon:</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">total_views:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_views_icon:</span> <span class="string">fa</span> <span class="string">fa-eye</span></span><br><span class="line">  <span class="attr">post_views:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">post_views_icon:</span> <span class="string">fa</span> <span class="string">fa-eye</span></span><br></pre></td></tr></table></figure>
-
-
-
 <h3 id="加密文章设置"><a href="#加密文章设置" class="headerlink" title="加密文章设置"></a>加密文章设置</h3><p>来自：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/113235573">https://zhuanlan.zhihu.com/p/113235573</a></p>
 <p>安装插件：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save hexo-blog-encrypt</span><br></pre></td></tr></table></figure>
-
-
-
 <p>在 _config.yml 中添加如下内容：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安全</span></span><br><span class="line"><span class="attr">encrypt:</span> <span class="comment"># hexo-blog-encrypt</span></span><br><span class="line">  <span class="attr">abstract:</span> <span class="string">这篇文章被加密了，需要输入密码查看哦。</span></span><br><span class="line">  <span class="attr">message:</span> <span class="string">您好,</span> <span class="string">这里需要密码.</span></span><br><span class="line">  <span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> &#123;<span class="attr">name:</span> <span class="string">tagName</span>, <span class="attr">password:</span> <span class="string">密码A</span>&#125;</span><br><span class="line">  <span class="bullet">-</span> &#123;<span class="attr">name:</span> <span class="string">tagName</span>, <span class="attr">password:</span> <span class="string">密码B</span>&#125;</span><br><span class="line">  <span class="attr">template:</span> <span class="string">&lt;div</span> <span class="string">id=&quot;hexo-blog-encrypt&quot;</span> <span class="string">data-wpm=&quot;&#123;&#123;hbeWrongPassMessage&#125;&#125;&quot;</span> <span class="string">data-whm=&quot;&#123;&#123;hbeWrongHashMessage&#125;&#125;&quot;&gt;&lt;div</span> <span class="string">class=&quot;hbe-input-container&quot;&gt;&lt;input</span> <span class="string">type=&quot;password&quot;</span> <span class="string">id=&quot;hbePass&quot;</span> <span class="string">placeholder=&quot;&#123;&#123;hbeMessage&#125;&#125;&quot;</span> <span class="string">/&gt;&lt;label&gt;&#123;&#123;hbeMessage&#125;&#125;&lt;/label&gt;&lt;div</span> <span class="string">class=&quot;bottom-line&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;script</span> <span class="string">id=&quot;hbeData&quot;</span> <span class="string">type=&quot;hbeData&quot;</span> <span class="string">data-hmacdigest=&quot;&#123;&#123;hbeHmacDigest&#125;&#125;&quot;&gt;&#123;&#123;hbeEncryptedData&#125;&#125;&lt;/script&gt;&lt;/div&gt;</span></span><br><span class="line">  <span class="attr">wrong_pass_message:</span> <span class="string">抱歉,</span> <span class="string">这个密码看着不太对,</span> <span class="string">请再试试.</span></span><br><span class="line">  <span class="attr">wrong_hash_message:</span> <span class="string">抱歉,</span> <span class="string">这个文章不能被校验,</span> <span class="string">不过您还是能看看解密后的内容.</span></span><br></pre></td></tr></table></figure>
-
-
-
 <p>在所需加密的文章中，文章头部改为如下内容：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: passwordtest</span><br><span class="line">date: 2021-04-20 20:24:13</span><br><span class="line">password: password</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
 
     </div>
 
@@ -376,8 +324,8 @@
     <div class="post-nav">
       <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2021/04/20/ACM-templates/" rel="next" title="ACM">
-      ACM <i class="fa fa-chevron-right"></i>
+    <a href="/2021/04/20/ACM-templates/" rel="next" title="ACM 模板整理">
+      ACM 模板整理 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
