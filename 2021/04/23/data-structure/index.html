@@ -53,7 +53,7 @@
 <meta property="og:image" content="https://xiaoq-sd.github.io/images/newQuickSort-1619160645164.gif">
 <meta property="og:image" content="https://xiaoq-sd.github.io/images/image-20201215154124186-1619160645164.png">
 <meta property="article:published_time" content="2021-04-23T06:23:12.000Z">
-<meta property="article:modified_time" content="2021-04-23T07:09:18.875Z">
+<meta property="article:modified_time" content="2021-04-23T12:52:24.566Z">
 <meta property="article:author" content="Yang Jiaqi">
 <meta property="article:tag" content="Data Structure">
 <meta name="twitter:card" content="summary">
@@ -244,7 +244,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-04-23 14:23:12 / 修改时间：15:09:18" itemprop="dateCreated datePublished" datetime="2021-04-23T14:23:12+08:00">2021-04-23</time>
+              <time title="创建时间：2021-04-23 14:23:12 / 修改时间：20:52:24" itemprop="dateCreated datePublished" datetime="2021-04-23T14:23:12+08:00">2021-04-23</time>
             </span>
 
           
@@ -1893,7 +1893,6 @@
 <p>设立三个指针，一个工作指针 $j$，一个指示红色 $i$，一个指示蓝色 $k$。</p>
 <p>实现：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">enum</span>&#123;</span>RED, WHITE, BLUE&#125; color; <span class="comment">// 枚举数组</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Flag_Arrange</span><span class="params">(color a[], <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>, k = n - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(j &lt;= k)&#123;</span><br><span class="line">        <span class="keyword">switch</span>(a[j])&#123;</span><br><span class="line">            <span class="keyword">case</span> RED: swap(a[i],a[j]); ++i; ++j; <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> WHITE: j++; <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> BLUE: swap(a[j], a[k]) --k;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
     </div>
 
     
