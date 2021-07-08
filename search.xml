@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>DataVisualization</title>
+    <url>/2021/05/27/DataVisualization/</url>
+    <content><![CDATA[<h2 id="常见可视化模型"><a href="#常见可视化模型" class="headerlink" title="常见可视化模型"></a>常见可视化模型</h2><h3 id="条形图（Bar-Chart）"><a href="#条形图（Bar-Chart）" class="headerlink" title="条形图（Bar Chart）"></a>条形图（Bar Chart）</h3><h2 id="学习网站"><a href="#学习网站" class="headerlink" title="学习网站"></a>学习网站</h2><h3 id="可视化作品"><a href="#可视化作品" class="headerlink" title="可视化作品"></a>可视化作品</h3><p><a href="https://www.gapminder.org/">https://www.gapminder.org/</a></p>
+<p>多个维度展示整个世界。世界人民生活质量、收入、人口，不同国家和地区，不同年份的变化。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Mi-Hang</title>
     <url>/2021/05/02/Mi-Hang/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
@@ -101,13 +108,6 @@
       <tags>
         <tag>blogs</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>DataVisualization</title>
-    <url>/2021/05/27/DataVisualization/</url>
-    <content><![CDATA[<h2 id="常见可视化模型"><a href="#常见可视化模型" class="headerlink" title="常见可视化模型"></a>常见可视化模型</h2><h3 id="条形图（Bar-Chart）"><a href="#条形图（Bar-Chart）" class="headerlink" title="条形图（Bar Chart）"></a>条形图（Bar Chart）</h3><h2 id="学习网站"><a href="#学习网站" class="headerlink" title="学习网站"></a>学习网站</h2><h3 id="可视化作品"><a href="#可视化作品" class="headerlink" title="可视化作品"></a>可视化作品</h3><p><a href="https://www.gapminder.org/">https://www.gapminder.org/</a></p>
-<p>多个维度展示整个世界。世界人民生活质量、收入、人口，不同国家和地区，不同年份的变化。</p>
-]]></content>
   </entry>
   <entry>
     <title>ACM 模板整理</title>
