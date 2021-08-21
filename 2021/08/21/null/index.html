@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/yjq.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/yjq.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="eD5NHy4QQsmjI9we">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"xiaoq-sd.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Python学习笔记 基础篇 内容仍待补充">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python学习笔记">
+<meta property="og:url" content="https://xiaoq-sd.github.io/2021/08/21/null/index.html">
+<meta property="og:site_name" content="XiaoQ&#39;s Blog">
+<meta property="og:description" content="Python学习笔记 基础篇 内容仍待补充">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-21T12:07:30.000Z">
+<meta property="article:modified_time" content="2021-08-21T12:10:25.125Z">
+<meta property="article:author" content="Yang Jiaqi">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://xiaoq-sd.github.io/2021/08/21/null/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Python学习笔记 | XiaoQ's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">XiaoQ's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiaoq-sd.github.io/2021/08/21/null/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/yjq.jpg">
+      <meta itemprop="name" content="Yang Jiaqi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoQ's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python学习笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-08-21 20:07:30 / 修改时间：20:10:25" itemprop="dateCreated datePublished" datetime="2021-08-21T20:07:30+08:00">2021-08-21</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p> Python学习笔记</p>
+<p>基础篇</p>
+<p>内容仍待补充</p>
+<span id="more"></span>
+<h3 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h3><h4 id="变量-数据类型-运算符"><a href="#变量-数据类型-运算符" class="headerlink" title="变量 数据类型 运算符"></a>变量 数据类型 运算符</h4><p>变量无需声明，但使用之前都必须先赋值。变量赋值之后变量才会被创建。Python中，没有类型，变量就是变量。</p>
+<p>在Python中，一切都是对象，因此del关键字可以用于删除变量，列表或列表片等。</p>
+<p>Python允许同时为多个变量赋值。即允许：a = b = c = 1</p>
+<p>Python允许为多个对象指定多个变量。即允许：a, b, c = 1, 2, “yellow”</p>
+<p>python中的函数作用域有四种，查找顺序为：局部作用域L&gt;闭包函数外的函数中E&gt;全局作用域G&gt;内建作用域B。注意，只有模块module，类class，函数def、lambda会引入新的作用域，其他的代码块则不会，因而if语句块内但外部可以访问。</p>
+<p>可以用global关键字在作用域内声明全局变量。也可以用nonlocal关键字在嵌套作用域中声明外层非全局中的变量。</p>
+<hr>
+<ol>
+<li><p>数字类型</p>
+<p>Python3中，支持int float bool complex数据类型。</p>
+<p>在Python3中，True和False被定义成关键字，但其值还是0和1。</p>
+<p>复数的表示方式可以用 $a + bj$ 表示，也可以用complex(a, b)表示，实数部分a和虚数部分b都是浮点型。</p>
+</li>
+<li><p>String 字符串</p>
+<p>字符串String用单引号或双引号引起来，使用反斜杠转义特殊字符。r开头的字符串可以表示不转义的字符串。注意：<strong>Python没有单独的字符类型</strong>。</p>
+<p>字符串截取 格式：变量[头下标:尾下标]。注意0是开始值，且区间为常见的左闭右开。下标可以为负数，代表从右数的顺序。</p>
+<p>替换字符串 格式：变量.replace(“被替换的内容”，”替换后的内容”[，次数])，替换次数可以为空，即表示替换所有；若不为空，则表示最多的替换次数。要注意的是使用replace替换字符串后仅为临时变量，需重新赋值才能保存。</p>
+<p>查找字符串 格式：变量.find(“要查找的内容”[，开始位置，结束位置])，开始位置和结束位置，表示要查找的范围，为空则表示查找所有。查找到后会返回位置，位置从0开始算，如果未找到则返回-1。</p>
+<p>分割字符串 格式：变量.split(“分割标示符号”[，分割次数])，分割次数表示分割最大次数，为空则分割所有。</p>
+</li>
+<li><p>List 列表</p>
+<p>列表可以完成大多数集合类的数据结构实现。列表中的元素类型可以不相同，也可以嵌套。</p>
+<p>同字符串一样，列表同样可以被索引和截取，列表被截取后返回一个包含所需元素的新列表。</p>
+<p>List中元素是可以改变的。</p>
+</li>
+<li><p>Tuple 元组</p>
+<p>元组与列表类似，但其元素不能更改。</p>
+<p>可以把字符串看作一种特殊的元组。</p>
+</li>
+<li><p>Set 集合</p>
+<p>集合是一个无序不重复元素的序列。基本功能是进行成员关系测试和删除重复元素。可以使用大括号”{}”来创建集合或者使用Set()函数创建。注意，<strong>创建空集合必须使用Set()，因为”{}”专门用来创建空字典（Dictionary）。</strong></p>
+</li>
+<li><p>Dictionary 字典</p>
+<p>字典与列表的区别在于字典中的元素是通过键来存取的，而不是通过偏移存取。</p>
+<p>字典是一种映射类型，用”{}”标识，是一个无序的’Key: Value’对的集合。Key必须使用不可变类型，且同一个字典中Key必须是唯一的。</p>
+<p>创建空字典使用”{}”。</p>
+<p>构造函数dict()可以直接从键值对序列中构造字典。</p>
+</li>
+</ol>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">序列类型</th>
+<th style="text-align:center">是否有序</th>
+<th style="text-align:center">创建符号</th>
+<th style="text-align:center">重复</th>
+<th style="text-align:center">动态扩展</th>
+<th style="text-align:center">元素访问</th>
+<th style="text-align:center">嵌套</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">列表</td>
+<td style="text-align:center">有序</td>
+<td style="text-align:center">[]</td>
+<td style="text-align:center">可</td>
+<td style="text-align:center">可</td>
+<td style="text-align:center">偏移读取</td>
+<td style="text-align:center">可</td>
+</tr>
+<tr>
+<td style="text-align:center">元组</td>
+<td style="text-align:center">有序</td>
+<td style="text-align:center">()</td>
+<td style="text-align:center">可</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">偏移读取</td>
+<td style="text-align:center">可</td>
+</tr>
+<tr>
+<td style="text-align:center">字典</td>
+<td style="text-align:center">无序</td>
+<td style="text-align:center">{key: value}</td>
+<td style="text-align:center">可</td>
+<td style="text-align:center">可</td>
+<td style="text-align:center">键值读取</td>
+<td style="text-align:center">可</td>
+</tr>
+<tr>
+<td style="text-align:center">集合</td>
+<td style="text-align:center">无序</td>
+<td style="text-align:center">{}</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">可</td>
+<td style="text-align:center">不可读取</td>
+<td style="text-align:center">否</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>在python中进行数据转换，只需要在转换时将数据类型作为函数名即可。</p>
+<hr>
+<p>python的运算符与多数语言类似，其中部分需要注意：</p>
+<ol>
+<li>幂运算$<strong>$，$</strong>=$类似。</li>
+<li>向下整除$//$，$//=$类似。</li>
+<li>$&lt;&gt;$与$!=$作用类似。</li>
+<li>位运算符 &lt;&lt;,&gt;&gt;,\&amp;,|,^,~</li>
+<li>逻辑运算符 and, or, not</li>
+<li>成员运算符 in, not in</li>
+<li>身份运算符 is, not is 判断两个标识符是否引自同一对象 </li>
+</ol>
+<h4 id="基本控制结构"><a href="#基本控制结构" class="headerlink" title="基本控制结构"></a>基本控制结构</h4><p>注意，<strong>python中没有switch-case语句</strong>。</p>
+<p>if语句格式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> condition1:</span><br><span class="line">    statement1</span><br><span class="line"><span class="keyword">elif</span> condition2:</span><br><span class="line">    statment2</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    statement3</span><br></pre></td></tr></table></figure>
+<p>条件后面必须要跟上’:’，表示接下来是满足条件后要执行的语句块。</p>
+<p>缩进划分语句块。相同缩进数的语句在一起组成一个语句块。</p>
+<hr>
+<p>while语句格式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> condition:</span><br><span class="line">    statement</span><br></pre></td></tr></table></figure>
+<p>while-else语句：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> condition:</span><br><span class="line">    statement1</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    statement2</span><br></pre></td></tr></table></figure>
+<p>for语句格式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> &lt;var&gt; <span class="keyword">in</span> &lt;sequence&gt;:</span><br><span class="line">    statement1</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    statement2</span><br></pre></td></tr></table></figure>
+<p>或使用range()函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">    <span class="comment"># 0, 1, 2, 3, 4</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 也可以设置间隔</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(-<span class="number">10</span>, -<span class="number">100</span>, -<span class="number">30</span>):</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">    <span class="comment"># -10, -40, -70</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>pass语句是空语句，目的是为了保持程序结构的完整性。pass不起任何作用，一般用作占位语句。</p>
+<p>内置的enumerate()函数进行遍历，格式为</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> index, item <span class="keyword">in</span> <span class="built_in">enumerate</span>(sequence):</span><br><span class="line">    process(index, item)</span><br></pre></td></tr></table></figure>
+<hr>
+<p>with语句，格式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> 表达式 <span class="keyword">as</span> 变量:</span><br><span class="line">    statement</span><br></pre></td></tr></table></figure>
+<p>变量中存放返回方法的返回值，无论结果如何，会调用返回对象的$__exit__()$方法。</p>
+<p>异常处理：</p>
+<p>异常是python对象，表示一个错误。python脚本发生异常时，需要捕获处理它，否则程序会终止执行。</p>
+<p>捕获异常可以使用try-except语句。语法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    &lt;code&gt;</span><br><span class="line"><span class="keyword">except</span> &lt;name&gt;:</span><br><span class="line">    &lt;code&gt; <span class="comment"># name of error</span></span><br><span class="line"><span class="keyword">except</span> &lt;name&gt;, &lt;data&gt;:</span><br><span class="line">    &lt;code&gt; <span class="comment">#</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    &lt;code&gt; <span class="comment"># no error</span></span><br></pre></td></tr></table></figure>
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><p>定义的语法格式为</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">funcname</span>(<span class="params">varlist</span>):</span>    statement</span><br></pre></td></tr></table></figure>
+<p>类型属于对象，变量是没有类型的，仅仅是一个对象的引用（指针）。</p>
+<p>在Python中，Strings，Tuple，Numbers是不可更改的对象，而List，Dict是可以更改的对象。</p>
+<p>对于不可变类型，类似于C++中的值传递，若修改，则只相当于修改复制的对象，而不会影响其本身。可变类型类似于C++中的引用传递，是将真正地址传过去，修改的话则会修改其存储的值。</p>
+<p>参数：</p>
+<ol>
+<li><p>必须参数。调用参数数量与声明时的数量一样。</p>
+</li>
+<li><p>关键字参数。</p>
+<p>允许参数传入0个或任意多个<strong>含参数名的参数</strong>，这些关键字在函数内部自动组成一个Dict。格式为双星号（**）。</p>
+<p>示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">person</span>(<span class="params">name, age, **kw</span>):</span>    statementperson(<span class="string">&#x27;AAA&#x27;</span>, <span class="string">&#x27;37&#x27;</span>)person(<span class="string">&#x27;AAA&#x27;</span>, <span class="string">&#x27;37&#x27;</span>, city = <span class="string">&#x27;Beijing&#x27;</span>)person(<span class="string">&#x27;AAA&#x27;</span>, <span class="string">&#x27;37&#x27;</span>, city = <span class="string">&#x27;Beijing&#x27;</span>, gender = <span class="string">&#x27;M&#x27;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>默认参数。在声明时赋予默认值，同C类似。</p>
+</li>
+<li><p>不定长参数。</p>
+<p>存放任意多个参数，参数声明时不会命名，关键字存在一个元组（Tuple）中。格式为单星号（*）。</p>
+<p>示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printinfo</span>(<span class="params">var1, *vartuple</span>):</span>    statementprintinfo(<span class="number">8</span>)printinfo(<span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>匿名函数。</p>
+<p>使用lambda创建匿名函数，不再使用def语句这样的标准形式定义一个函数，而只是一个表达式。</p>
+<p>示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sum</span> = <span class="keyword">lambda</span> arg1, arg2: arg1 + arg2;</span><br></pre></td></tr></table></figure>
+<h4 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h4><p>通过open函数，创建file对象，打开一个文件，获取文件句柄，然后可通过句柄进行各种操作。</p>
+<ol>
+<li>.close()关闭文件</li>
+<li>.flush()刷新缓冲区</li>
+<li>.next()返回下一行</li>
+<li>.read([size])从文件读取指定的字节数，为给定或为负，则读取所有</li>
+<li>.readline([size])读取一整行</li>
+<li>.seek(offset[, whence])设置文件当前位置</li>
+<li>.tell()返回当前位置</li>
+<li>.write(str)字符串写入文件，没有返回值</li>
+</ol>
+<p>操作目录。</p>
+<ol>
+<li>创建目录：os.mkdir(path)</li>
+<li>复制文件：shutil.copyfile(“oldfile”, “newfile”) 两个文件名。shutil.copy(“directory”, “newfile”) 前者只能是文件夹，后者可以是文件，也可以是目录</li>
+<li>复制文件夹：shutil.copytree(“olddir”, “newdir”) 都必须是目录，且newdir不存在</li>
+<li>重命名：os.rename(“oldname”, “newname”)</li>
+<li>移动文件：shutil.move(“old”, “new”)</li>
+<li>删除文件：os.remove(‘name’)</li>
+<li>删除目录：os.rmdir(‘diractory’) 只能删除空目录，shutil.rmtree(“dir”) 可以删除空目录，也可以删除有内容的目录</li>
+<li>转换目录：os.chdir(“path”)</li>
+<li>获取当前工作目录：os.getcwd()</li>
+<li>返回指定目录下的所有文件和目录名：os.listdir()</li>
+</ol>
+<h4 id="python-模块"><a href="#python-模块" class="headerlink" title="python 模块"></a>python 模块</h4><p>模块（module），又称为库。python模块是一个python文件，以.py结尾，模块内包含定义函数、类和变量，模块里也可以包含可执行代码。包含：</p>
+<ol>
+<li>系统内置模块</li>
+<li>自定义模块。自己写的模块，对某段逻辑或某些函数进行封装后形成模块，以供其他函数调用。自定义模块的名称不能和系统内置的模块重名，否则无法导入系统内置模块</li>
+<li>第三方模块</li>
+</ol>
+<p>模块有四种表现形式：</p>
+<ol>
+<li>python语言编写的py文件</li>
+<li>已被编译为共享库或DLL的C或C++扩展</li>
+<li>把一系列模块组织到一起的文件夹，文件夹中有一个$__init__.py$文件，该文件夹成为“包”</li>
+<li>使用C语言编写并连接到python解释器的内置模块</li>
+</ol>
+<p>一个模块只会被导入一次。</p>
+<p>导入模块的方法：</p>
+<ol>
+<li>import module 语句导入</li>
+<li>import module as name 重命名为name，可使用自己想要的名字替换为模块原始的名称</li>
+<li>from package import module 从包中导入子类</li>
+<li>from modname import * 可以把一个模块的所有内容都导入到当前命名空间</li>
+</ol>
+<h4 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h4><ol>
+<li><p>类定义</p>
+<p>语法格式为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassName</span>:</span>    &lt;statements&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>类对象</p>
+<p>类对象支持两种操作，属性引用和实例化。类对象创建后，类命名空间中所有的命名都是有效属性名。示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Myclass</span>:</span>    i = <span class="number">123</span>    <span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">self</span>):</span>        <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span>x = Myclass() <span class="comment"># 实例化print(x.i) # 123print(x.f()) # hello</span></span><br></pre></td></tr></table></figure>
+<p>构造函数为$__init__()$方法，类的实例化操作会自动调用此方法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span>	self.data = []</span><br></pre></td></tr></table></figure>
+<p>init方法与普通的函数的区别在于，它们必须有一个额外的第一个参数名称，按照惯例名称是self。方法也可以有参数。</p>
+</li>
+<li><p>类方法</p>
+<p>类内部，用def关键字来定义方法，与一般函数不同的是，类方法中必须包含参数self，且为第一个参数，self代表的是类的示例。</p>
+</li>
+<li><p>继承 多继承</p>
+<p>派生类的继承方法为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DerivedClassName</span>(<span class="params">BaseClassName1, BaseClassName2, ...</span>):</span>    &lt;statements&gt;</span><br></pre></td></tr></table></figure>
+<p>圆括号中为基类，若基类中有相同的方法名，而在子类使用时未指定，那么python将从左至右搜索，查找基类中是否包含方法。示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">people</span>:</span>    name = <span class="string">&#x27;&#x27;</span>    age = <span class="number">0</span>    __weight = <span class="number">0</span> <span class="comment"># 私有属性    def __init__(self, n, a, w):        self.name = n        self.age = a        self.__weight = w    def info(self):        print(self.name, self.age)# 单继承class student(people):    grade = &#x27;&#x27;    def __init__(self, n, a, w, g):        people.__init__(self, n, a, w)        self.grade = g    def info(self):        # 覆写父类方法        print(self.name, self.age, self.grade)s = student(&#x27;Bob&#x27;, 10, 60, 3)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>类属性与方法</p>
+<p>两个下划线开头，声明该属性为私有，不能在类外被使用或直接访问。</p>
+<p>私有方法同样也是双下划线开头，声明方法为私有方法。</p>
+<p>类的专有方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__init__() <span class="comment"># 构造函数__del__() # 析构函数__repr__() # 打印、转换__setitem__() # 按照索引赋值__getitem__() # 按照索引获取值__len__() # 获得长度__cmp__() # 比较__call__() # 函数调用__add__() __sub__() __mul__() __div__() # 加减乘除__mod__() __pow__() # 求余 乘方</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运算符重载</p>
+<p>python可以对类的专有方法进行重载。示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Vector</span>:</span>    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, a, b</span>):</span>        self.a = a        self.b = b    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span>(<span class="params">self</span>):</span>        <span class="built_in">print</span>(self.a, self.b)    <span class="function"><span class="keyword">def</span> <span class="title">__add__</span>(<span class="params">self, other</span>):</span>        <span class="keyword">return</span> Vector(self.a + other.a, self.b + other.b)v1 = Vector(<span class="number">1</span>, <span class="number">10</span>)v2 = Vector(<span class="number">5</span>, -<span class="number">2</span>)<span class="built_in">print</span>(v1 + v2) <span class="comment"># Vector(6, 8)</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="CPU-多线程"><a href="#CPU-多线程" class="headerlink" title="CPU 多线程"></a>CPU 多线程</h4><p>简单的多线程。</p>
+<p>采用threading模块直接创建线程。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> timeimport threadingdef run(a, b, c):    <span class="built_in">print</span>(<span class="string">&quot;start &quot;</span> + b)    time.sleep(<span class="number">1</span>) <span class="comment"># 线程等待    print(&quot;value &quot; + a)    time.sleep(1)    print(c)    time.sleep(1)    print(&quot;end thread &quot; + b)if __name__ == &#x27;__main__&#x27;:    t1 = threading.Thread(target=run, args=(&quot;1&quot;, &#x27;a&#x27;, 3)) # 传递参数    t2 = threading.Thread(target=run, args=(&quot;2&quot;, &#x27;b&#x27;, 2))    t3 = threading.Thread(target=run, args=(&quot;3&quot;, &#x27;c&#x27;, 1))    t1.start() # 线程启动    t2.start()    t3.start()</span></span><br></pre></td></tr></table></figure>
+<p>线程可以自定义，即自己实现线程类。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> timeimport threadingclass MyThread(threading.Thread):    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, a, b, c</span>):</span>        <span class="built_in">super</span>(MyThread, self).__init__() <span class="comment"># 重构run函数必须写        self.a = a        self.b = b        self.c = c    def run(self): # 参数修改为self        print(&quot;start &quot; + self.b)        time.sleep(1)        print(&quot;value &quot; + self.a)        time.sleep(1)        print(self.c)        time.sleep(1)        print(&quot;end thread &quot; + self.b)if __name__ == &#x27;__main__&#x27;:    # t1 = threading.Thread(target=run, args=(&quot;1&quot;, &#x27;a&#x27;, 3))    # t2 = threading.Thread(target=run, args=(&quot;2&quot;, &#x27;b&#x27;, 2))    # t3 = threading.Thread(target=run, args=(&quot;3&quot;, &#x27;c&#x27;, 1))    t1 = MyThread(&quot;1&quot;, &#x27;a&#x27;, 3) # 调用方式更改    t2 = MyThread(&quot;2&quot;, &#x27;b&#x27;, 2)    t3 = MyThread(&quot;3&quot;, &#x27;c&#x27;, 1)    t1.start()    t2.start()    t3.start()</span></span><br></pre></td></tr></table></figure>
+<p>可以使用守护线程来保证，主线程运行结束后，子线程随之结束。</p>
+<p>设置方式为，在start之前使用语句.setDeamon(True)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> timeimport threadingdef run(a, b, c):    <span class="built_in">print</span>(<span class="string">&quot;start &quot;</span> + b)    time.sleep(<span class="number">1</span>)  <span class="comment"># 线程等待    print(&quot;value &quot; + a)    time.sleep(1)    print(c)    time.sleep(1)    print(&quot;end thread &quot; + b)if __name__ == &#x27;__main__&#x27;:    t1 = threading.Thread(target=run, args=(&quot;1&quot;, &#x27;a&#x27;, 3))  # 传递参数    t2 = threading.Thread(target=run, args=(&quot;2&quot;, &#x27;b&#x27;, 2))    t3 = threading.Thread(target=run, args=(&quot;3&quot;, &#x27;c&#x27;, 1))    t1.setDaemon(True) # 将线程全部设置为守护线程    t2.setDaemon(True)    t3.setDaemon(True)        t1.start()  # 线程启动    t2.start()    t3.start()</span></span><br></pre></td></tr></table></figure>
+<p>可以使用join方法，即在最后添加t1.join()语句，让主线程等待子线程执行结束之后再结束。</p>
+<p>共享内存问题，通过互斥锁来解决。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> timeimport threadingimport randomfrom threading <span class="keyword">import</span> Lockdef work(i):    <span class="keyword">global</span> n <span class="comment"># 声明全局变量    t = random.random()    time.sleep(t)    lock.acquire() # 获取    a = n    n = a - 1    print(i, t, n)    lock.release() # 释放if __name__ == &#x27;__main__&#x27;:    lock = Lock() # 声明互斥锁    n = 15    l = []    for i in range(1, 10, 1):        p = threading.Thread(target=work, args=[i])        l.append(p)        p.start()    for i in l:        i.join()</span></span><br></pre></td></tr></table></figure>
+<p>但Lock互斥锁并不常用，常用的是RLock可重入锁。避免了死锁的出现。</p>
+<p>拥有RLock的线程可以重复调用acquire()，但释放锁时需要调用release()相同次数。</p>
+<p>用法与Lock一样。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> timeimport threadingimport randomfrom threading <span class="keyword">import</span> Lockdef work(i, lock):    <span class="keyword">global</span> n    <span class="keyword">if</span> (i &gt; <span class="number">0</span>):        lock.acquire()        a = n        n = a - <span class="number">1</span>        <span class="built_in">print</span>(i, n)        work(i - <span class="number">1</span>, lock) <span class="comment"># 递归测试        lock.release()if __name__ == &#x27;__main__&#x27;:    lock = threading.RLock() # 申请重入锁    n = 50    l = []    for i in range(1, 10, 1):        p = threading.Thread(target=work, args=[i, lock])        l.append(p)        p.start()    for i in l:        i.join()</span></span><br></pre></td></tr></table></figure>
+<p>信号量。</p>
+<p>Semaphore，允许一定数量的线程更改数据。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> timeimport threadingimport randomfrom threading <span class="keyword">import</span> Lockdef work(i, semaphore):    <span class="keyword">global</span> n    semaphore.acquire() <span class="comment"># 加锁    time.sleep(1)    print(&quot;thread&quot; + str(i))    semaphore.release() # 释放if __name__ == &#x27;__main__&#x27;:    num = 0    semaphore = threading.BoundedSemaphore(5) # 申请最多同时5个线程    for i in range(1, 25, 1):        t = threading.Thread(target=work, args=(i, semaphore))        t.start()    while threading.active_count() &gt; 1: # 统计活跃的线程数量        pass    else:        print(&quot;end all threads&quot;)</span></span><br></pre></td></tr></table></figure>
+<h3 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h3><h4 id="操作SQLite"><a href="#操作SQLite" class="headerlink" title="操作SQLite"></a>操作SQLite</h4><p>SQLite是非常小的嵌入式开源软件，没有独立的维护进程，所有的维护都来自于程序本身。使用SQLite3创建数据库的连接，连接对象会连接现有数据库或者自动创建数据库文件，连接对象可以是硬盘上面的文件，也可以是建立在内存中的数据库。</p>
+<p>使用SQLite3模块，首先要创建一个表示数据库的连接对象，然后可以创建光标对象，光标对象可以执行所有的SQL语句。</p>
+<p>cursor()方法会创建一个游标对象，游标对象可以操作数据库，游标主要执行SQL语句，调用存储过程，获取查询结果等功能。</p>
+<p>示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sqlite3def main():    <span class="comment"># 连接数据库    conn = sqlite3.connect(&#x27;test.db&#x27;)    # 创建游标    c = conn.cursor()    # 执行创建表的操作    c.execute(&#x27;&#x27;&#x27;        create table test(            date text,             trans text,             symbol text,             qty real,            price real         )    &#x27;&#x27;&#x27;)    # 插入数据    c.execute(&#x27;&#x27;&#x27;        insert into test values(            &#x27;2021-7-30&#x27;,            &#x27;buy&#x27;,            &#x27;newcloud&#x27;,            100,            35.14        )    &#x27;&#x27;&#x27;)    # 提交当前事务    conn.commit()    # 关闭此connect对象 关闭后无法再进行操作    conn.close()if __name__ == &#x27;__main__&#x27;:    main()</span></span><br></pre></td></tr></table></figure>
+<p>数据也可以进行批量插入</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sqlite3def main():    conn = sqlite3.connect(<span class="string">&#x27;test.db&#x27;</span>)    c = conn.cursor()    <span class="comment"># 插入信息    info = [        (&#x27;2021-7-21&#x27;, &#x27;buy&#x27;, &#x27;flower&#x27;, 1000, 36.1),        (&#x27;2021-7-22&#x27;, &#x27;buy&#x27;, &#x27;plant&#x27;, 1000, 33.4),        (&#x27;2021-7-23&#x27;, &#x27;buy&#x27;, &#x27;cloud&#x27;, 500, 30.5),    ]    for i in info:        c.execute(&#x27;&#x27;&#x27;            insert into test values(?,?,?,?,?)        &#x27;&#x27;&#x27;, i) # 批量进行插入    # 查询语句    for row in c.execute(&#x27;select * from test&#x27;):        print(row)    conn.commit()    conn.close()if __name__ == &#x27;__main__&#x27;:    main()</span></span><br></pre></td></tr></table></figure>
+<p>如果需要频繁访问数据库，可以简历内存数据库，语句为</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conn = sqlite3.connect(<span class="string">&#x27;:memory:&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="操作MySQL"><a href="#操作MySQL" class="headerlink" title="操作MySQL"></a>操作MySQL</h4><p>暂略。</p>
+<h3 id="Web框架"><a href="#Web框架" class="headerlink" title="Web框架"></a>Web框架</h3><h4 id="主流Web框架"><a href="#主流Web框架" class="headerlink" title="主流Web框架"></a>主流Web框架</h4><p>略</p>
+<h4 id="Django-框架"><a href="#Django-框架" class="headerlink" title="Django 框架"></a>Django 框架</h4><p>略</p>
+<h4 id="Flask-框架"><a href="#Flask-框架" class="headerlink" title="Flask 框架"></a>Flask 框架</h4><p>略</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/07/10/secret/" rel="prev" title="secret">
+      <i class="fa fa-chevron-left"></i> secret
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%AF%87"><span class="nav-number">1.</span> <span class="nav-text">基础篇</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E9%87%8F-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.1.</span> <span class="nav-text">变量 数据类型 运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84"><span class="nav-number">1.2.</span> <span class="nav-text">基本控制结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">1.3.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="nav-number">1.4.</span> <span class="nav-text">文件操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python-%E6%A8%A1%E5%9D%97"><span class="nav-number">1.5.</span> <span class="nav-text">python 模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.6.</span> <span class="nav-text">类和对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CPU-%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.7.</span> <span class="nav-text">CPU 多线程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">数据库操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%93%8D%E4%BD%9CSQLite"><span class="nav-number">2.1.</span> <span class="nav-text">操作SQLite</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%93%8D%E4%BD%9CMySQL"><span class="nav-number">2.2.</span> <span class="nav-text">操作MySQL</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web%E6%A1%86%E6%9E%B6"><span class="nav-number">3.</span> <span class="nav-text">Web框架</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BB%E6%B5%81Web%E6%A1%86%E6%9E%B6"><span class="nav-number">3.1.</span> <span class="nav-text">主流Web框架</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Django-%E6%A1%86%E6%9E%B6"><span class="nav-number">3.2.</span> <span class="nav-text">Django 框架</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Flask-%E6%A1%86%E6%9E%B6"><span class="nav-number">3.3.</span> <span class="nav-text">Flask 框架</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Yang Jiaqi"
+      src="/images/yjq.jpg">
+  <p class="site-author-name" itemprop="name">Yang Jiaqi</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yang Jiaqi</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
