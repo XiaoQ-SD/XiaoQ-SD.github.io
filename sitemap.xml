@@ -9,14 +9,14 @@
   </url>
   
   <url>
-    <loc>https://xiaoq-sd.github.io/2021/07/10/secret/</loc>
+    <loc>https://xiaoq-sd.github.io/2021/04/23/data-structure/</loc>
     
-    <lastmod>2021-08-21</lastmod>
+    <lastmod>2021-08-24</lastmod>
     
   </url>
   
   <url>
-    <loc>https://xiaoq-sd.github.io/2021/05/27/DataVisualization/</loc>
+    <loc>https://xiaoq-sd.github.io/2021/07/10/secret/</loc>
     
     <lastmod>2021-08-21</lastmod>
     
@@ -40,13 +40,6 @@
     <loc>https://xiaoq-sd.github.io/2021/04/16/direction-for-use/</loc>
     
     <lastmod>2021-05-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xiaoq-sd.github.io/2021/04/23/data-structure/</loc>
-    
-    <lastmod>2021-04-23</lastmod>
     
   </url>
   
@@ -102,6 +95,13 @@
   </url>
   
   <url>
+    <loc>https://xiaoq-sd.github.io/tags/python/</loc>
+    <lastmod>2021-08-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xiaoq-sd.github.io/tags/ACM/</loc>
     <lastmod>2021-08-24</lastmod>
     <changefreq>daily</changefreq>
@@ -110,6 +110,13 @@
   
   <url>
     <loc>https://xiaoq-sd.github.io/tags/Data-Structure/</loc>
+    <lastmod>2021-08-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaoq-sd.github.io/tags/C-C/</loc>
     <lastmod>2021-08-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
