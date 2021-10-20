@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://xiaoq-sd.github.io/2021/10/20/null/</loc>
+    <lastmod>2021-10-20</lastmod>
+  </url>
+  <url>
+    <loc>https://xiaoq-sd.github.io/2021/05/02/Mi-Hang/</loc>
+    <lastmod>2021-10-10</lastmod>
+  </url>
+  <url>
+    <loc>https://xiaoq-sd.github.io/2021/09/23/SpatialAnalysis/</loc>
+    <lastmod>2021-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://xiaoq-sd.github.io/2021/09/19/GIS-Notes/</loc>
+    <lastmod>2021-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://xiaoq-sd.github.io/2021/04/20/ACM-templates/</loc>
+    <lastmod>2021-09-19</lastmod>
+  </url>
+  <url>
     <loc>https://xiaoq-sd.github.io/2021/05/27/DataVisualization/</loc>
     <lastmod>2021-08-24</lastmod>
   </url>
@@ -17,19 +37,11 @@
     <lastmod>2021-08-21</lastmod>
   </url>
   <url>
-    <loc>https://xiaoq-sd.github.io/2021/05/02/Mi-Hang/</loc>
-    <lastmod>2021-07-10</lastmod>
-  </url>
-  <url>
     <loc>https://xiaoq-sd.github.io/2021/07/03/Xing-Hui/</loc>
     <lastmod>2021-07-08</lastmod>
   </url>
   <url>
     <loc>https://xiaoq-sd.github.io/2021/04/16/direction-for-use/</loc>
     <lastmod>2021-05-02</lastmod>
-  </url>
-  <url>
-    <loc>https://xiaoq-sd.github.io/2021/04/20/ACM-templates/</loc>
-    <lastmod>2021-04-22</lastmod>
   </url>
 </urlset> 

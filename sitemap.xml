@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xiaoq-sd.github.io/2021/10/20/null/</loc>
+    
+    <lastmod>2021-10-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xiaoq-sd.github.io/2021/05/02/Mi-Hang/</loc>
+    
+    <lastmod>2021-10-10</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xiaoq-sd.github.io/2021/09/23/SpatialAnalysis/</loc>
+    
+    <lastmod>2021-09-23</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xiaoq-sd.github.io/2021/09/19/GIS-Notes/</loc>
+    
+    <lastmod>2021-09-23</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xiaoq-sd.github.io/2021/04/20/ACM-templates/</loc>
+    
+    <lastmod>2021-09-19</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xiaoq-sd.github.io/2021/05/27/DataVisualization/</loc>
     
     <lastmod>2021-08-24</lastmod>
@@ -30,13 +65,6 @@
   </url>
   
   <url>
-    <loc>https://xiaoq-sd.github.io/2021/05/02/Mi-Hang/</loc>
-    
-    <lastmod>2021-07-10</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://xiaoq-sd.github.io/2021/07/03/Xing-Hui/</loc>
     
     <lastmod>2021-07-08</lastmod>
@@ -47,13 +75,6 @@
     <loc>https://xiaoq-sd.github.io/2021/04/16/direction-for-use/</loc>
     
     <lastmod>2021-05-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xiaoq-sd.github.io/2021/04/20/ACM-templates/</loc>
-    
-    <lastmod>2021-04-22</lastmod>
     
   </url>
   
@@ -81,64 +102,71 @@
 
   <url>
     <loc>https://xiaoq-sd.github.io/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://xiaoq-sd.github.io/tags/diary/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <loc>https://xiaoq-sd.github.io/tags/GIS/</loc>
+    <lastmod>2021-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xiaoq-sd.github.io/tags/blogs/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-10-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaoq-sd.github.io/tags/diary/</loc>
+    <lastmod>2021-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xiaoq-sd.github.io/tags/python/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xiaoq-sd.github.io/tags/visualization/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xiaoq-sd.github.io/tags/D3/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xiaoq-sd.github.io/tags/ACM/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xiaoq-sd.github.io/tags/Data-Structure/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xiaoq-sd.github.io/tags/C-C/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

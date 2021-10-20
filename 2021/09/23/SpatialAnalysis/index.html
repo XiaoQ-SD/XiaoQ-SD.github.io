@@ -21,15 +21,21 @@
     var CONFIG = {"hostname":"xiaoq-sd.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="XiaoQ&#39;s Blog">
-<meta property="og:url" content="https://xiaoq-sd.github.io/archives/2021/08/index.html">
+  <meta name="description" content="《空间分析》课程笔记。 空间分析的基本原理，核心是空间分析的思维、方法以及进展。涉及的方法都是地学各领域内常用的方法，是科研的工具。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《空间分析》课程笔记">
+<meta property="og:url" content="https://xiaoq-sd.github.io/2021/09/23/SpatialAnalysis/index.html">
 <meta property="og:site_name" content="XiaoQ&#39;s Blog">
+<meta property="og:description" content="《空间分析》课程笔记。 空间分析的基本原理，核心是空间分析的思维、方法以及进展。涉及的方法都是地学各领域内常用的方法，是科研的工具。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-09-23T06:00:12.000Z">
+<meta property="article:modified_time" content="2021-09-23T06:22:21.332Z">
 <meta property="article:author" content="Yang Jiaqi">
+<meta property="article:tag" content="GIS">
+<meta property="article:tag" content="blogs">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://xiaoq-sd.github.io/archives/2021/08/">
+<link rel="canonical" href="https://xiaoq-sd.github.io/2021/09/23/SpatialAnalysis/">
 
 
 <script id="page-configurations">
@@ -37,12 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | XiaoQ's Blog</title>
+  <title>《空间分析》课程笔记 | XiaoQ's Blog</title>
   
 
 
@@ -183,50 +189,106 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 11 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiaoq-sd.github.io/2021/09/23/SpatialAnalysis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/yjq.jpg">
+      <meta itemprop="name" content="Yang Jiaqi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoQ's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          《空间分析》课程笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-09-23 14:00:12 / 修改时间：14:22:21" itemprop="dateCreated datePublished" datetime="2021-09-23T14:00:12+08:00">2021-09-23</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <p>《空间分析》课程笔记。</p>
+<p>空间分析的基本原理，核心是空间分析的思维、方法以及进展。涉及的方法都是地学各领域内常用的方法，是科研的工具。</p>
+<span id="more"></span>
+<p>[TOC]</p>
+<h2 id="空间统计分析"><a href="#空间统计分析" class="headerlink" title="空间统计分析"></a>空间统计分析</h2><p>空间分析（Spatial Analysis or Spatial Statistics）是用来分析空间/地理对象的几何、拓扑和属性数据的方法。</p>
+<p>空间分析为发现地理现象和过程的规律性“Pattern”提供定量的数据描述、操作方法和统计证据支持。</p>
+<p>Pattern：时空趋势、分布、相关性、异质性、邻近性、可达性等。</p>
+<p>基于统计的空间分析方法：</p>
+<ul>
+<li>通常是一般统计方法在地理（空间）问题上的扩展</li>
+<li>地理（空间）现象通常具有位置（显示/隐式）和相对位置关系（拓扑）</li>
+<li>地理（空间）问题的研究通常是位置和位置关系依赖的</li>
+<li>需要在一般统计方法上发展针对数据位置信息进行处理</li>
+<li>分析的结果通常也是位置和位置关系相关的时空间模式</li>
+<li>总体来看，空间分析的处理过程与一般统计方法是一致的</li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-08-21T20:07:30+08:00"
-              content="2021-08-21">
-          08-21
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/GIS/" rel="tag"># GIS</a>
+              <a href="/tags/blogs/" rel="tag"># blogs</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/08/21/null/" itemprop="url">
-            <span itemprop="name">Python学习笔记</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/19/GIS-Notes/" rel="prev" title="《地理信息科学》课程笔记">
+      <i class="fa fa-chevron-left"></i> 《地理信息科学》课程笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/10/20/null/" rel="next" title="Yan-Qi">
+      Yan-Qi <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
@@ -279,6 +341,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90"><span class="nav-number">1.</span> <span class="nav-text">空间统计分析</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
