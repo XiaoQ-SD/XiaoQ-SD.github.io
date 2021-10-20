@@ -109,13 +109,6 @@
 
   
   <url>
-    <loc>https://xiaoq-sd.github.io/tags/diary/</loc>
-    <lastmod>2021-10-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xiaoq-sd.github.io/tags/GIS/</loc>
     <lastmod>2021-10-20</lastmod>
     <changefreq>daily</changefreq>
@@ -124,6 +117,13 @@
   
   <url>
     <loc>https://xiaoq-sd.github.io/tags/blogs/</loc>
+    <lastmod>2021-10-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaoq-sd.github.io/tags/diary/</loc>
     <lastmod>2021-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
