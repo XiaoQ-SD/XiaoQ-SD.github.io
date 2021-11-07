@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://xiaoq-sd.github.io/2021/10/20/QiHun/</loc>
-    
-    <lastmod>2021-10-20</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://xiaoq-sd.github.io/2021/05/02/Mi-Hang/</loc>
     
     <lastmod>2021-10-20</lastmod>
@@ -102,7 +95,7 @@
 
   <url>
     <loc>https://xiaoq-sd.github.io/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2021-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -110,63 +103,63 @@
   
   <url>
     <loc>https://xiaoq-sd.github.io/tags/GIS/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2021-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xiaoq-sd.github.io/tags/blogs/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2021-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xiaoq-sd.github.io/tags/diary/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2021-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xiaoq-sd.github.io/tags/python/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2021-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xiaoq-sd.github.io/tags/visualization/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2021-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xiaoq-sd.github.io/tags/D3/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2021-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xiaoq-sd.github.io/tags/ACM/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2021-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xiaoq-sd.github.io/tags/Data-Structure/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2021-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xiaoq-sd.github.io/tags/C-C/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2021-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
