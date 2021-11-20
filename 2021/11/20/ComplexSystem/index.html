@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/yjq.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/yjq.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="eD5NHy4QQsmjI9we">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"xiaoq-sd.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="《复杂系统与复杂网络》课程综述 本文主要综述了复杂系统与复杂网络课程的主要内容与地理元胞自动机的发展与应用。 第一部分为复杂系统的综述，总结了复杂系统的定义，复杂系统的相关概念与复杂系统的特点，并总结了复杂系统的部分研究方法与研究挑战。第二部分为复杂网络的综述，主要包括复杂网络的基本概念，主要的复杂网络模型，如随机图模型、小世界模型等的介绍。第三部分介绍了复杂网络在地学中的应用，并给出了具体应用于">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《复杂系统与复杂网络》课程综述">
+<meta property="og:url" content="https://xiaoq-sd.github.io/2021/11/20/ComplexSystem/index.html">
+<meta property="og:site_name" content="XiaoQ&#39;s Blog">
+<meta property="og:description" content="《复杂系统与复杂网络》课程综述 本文主要综述了复杂系统与复杂网络课程的主要内容与地理元胞自动机的发展与应用。 第一部分为复杂系统的综述，总结了复杂系统的定义，复杂系统的相关概念与复杂系统的特点，并总结了复杂系统的部分研究方法与研究挑战。第二部分为复杂网络的综述，主要包括复杂网络的基本概念，主要的复杂网络模型，如随机图模型、小世界模型等的介绍。第三部分介绍了复杂网络在地学中的应用，并给出了具体应用于">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xiaoq-sd.github.io/images/Snipaste_2021-11-20_21-25-27.png">
+<meta property="article:published_time" content="2021-11-20T12:55:19.000Z">
+<meta property="article:modified_time" content="2021-11-20T13:30:12.374Z">
+<meta property="article:author" content="Yang Jiaqi">
+<meta property="article:tag" content="blogs">
+<meta property="article:tag" content="Complex System">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xiaoq-sd.github.io/images/Snipaste_2021-11-20_21-25-27.png">
+
+<link rel="canonical" href="https://xiaoq-sd.github.io/2021/11/20/ComplexSystem/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>《复杂系统与复杂网络》课程综述 | XiaoQ's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">XiaoQ's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiaoq-sd.github.io/2021/11/20/ComplexSystem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/yjq.jpg">
+      <meta itemprop="name" content="Yang Jiaqi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoQ's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          《复杂系统与复杂网络》课程综述
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-11-20 20:55:19 / 修改时间：21:30:12" itemprop="dateCreated datePublished" datetime="2021-11-20T20:55:19+08:00">2021-11-20</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>《复杂系统与复杂网络》课程综述</p>
+<p>本文主要综述了复杂系统与复杂网络课程的主要内容与地理元胞自动机的发展与应用。</p>
+<p>第一部分为复杂系统的综述，总结了复杂系统的定义，复杂系统的相关概念与复杂系统的特点，并总结了复杂系统的部分研究方法与研究挑战。第二部分为复杂网络的综述，主要包括复杂网络的基本概念，主要的复杂网络模型，如随机图模型、小世界模型等的介绍。第三部分介绍了复杂网络在地学中的应用，并给出了具体应用于轨迹数据挖掘，并进行轨迹行为分析的应用。第四部分主要讲述地理学中元胞自动机的概念与早期的应用领域，并给出了当前地理元胞自动机的主要研究方向。</p>
+<span id="more"></span>
+<h2 id="1-复杂系统综述"><a href="#1-复杂系统综述" class="headerlink" title="1. 复杂系统综述"></a>1. 复杂系统综述</h2><h3 id="1-1-复杂系统的定义"><a href="#1-1-复杂系统的定义" class="headerlink" title="1.1 复杂系统的定义"></a>1.1 复杂系统的定义</h3><p>系统（System）是广泛存在的，例如生态系统、社会系统甚至人体自身，都可以算作是系统。系统是由相互作用和相互依赖的若干组成部分结合的具有特定功能的有机整体。对于不同的系统，我们可以将其按系统的组成成分以及各成分之间的关系来进行分类。</p>
+<p>在文章[1]中指出，系统之间的差异可能不是因为它们的组成部分，而是因为这些部分之间如何影响和依赖而有所不同。文章将系统分为三种类型，即随机系统（Random System）、相干系统（Coherent System）和相关系统（Correlated System）。在随机系统中，各个组成成分的行为与其他组成部分的行为之间是完全独立的；在相干系统中，各个组成成分的行为则是完全一致的。相关系统则介于二者之间，即组成成分的行为受其他部分的影响，但也不会完全一致。</p>
+<p>而关于复杂系统（Complex System），在钱学森先生在文章[2]中，根据组成系统的子系统以及子系统种类的多少和他们之间关联关系的复杂程度，将系统分为简单系统和复杂巨系统。对于简单系统，其组成系统的子系统的数量较少，子系统间关系比较单纯。若子系统的数量比较大，则称作巨系统。如果巨系统中的子系统种类不多，且其之间关系不复杂，则称作简单巨系统，若子系统的种类很多并有层次结构，子系统间关联关系又很复杂，便称这样的系统为复杂巨系统。如果这个系统又是开放的，那么称这个系统为开放的复杂巨系统。其中，地理系统（包括生态系统）就属于开放的复杂巨系统。这些系统无论在结构、功能、行为和演化方面，都很复杂。</p>
+<p>我们也可以将复杂系统定义为有相互组织相互依赖的若干组成部分结合而成的具有特定功能的有机整体，具有涌现和自组织行为的系统。其研究对象主要包括物理系统、生态系统、社会系统等。</p>
+<h3 id="1-2-复杂系统的相关概念"><a href="#1-2-复杂系统的相关概念" class="headerlink" title="1.2 复杂系统的相关概念"></a>1.2 复杂系统的相关概念</h3><p>简单性（Simplicity）与复杂性（Complexity）：</p>
+<p>文章[3]中提及，简单性曾一直是自然科学的研究通则，即将复杂的现实事物抽象成简单的模型，通过简单的还原论方法进行处理，并从中发现简单的规律和过程。与还原论相对应的是整体论，对于复杂事物或现象，还原论的方法通常不适合进行。</p>
+<p>在文章中，复杂性被概括为系统由于内在元素非线性（Nonlinear）交互作用而产生的外在表象。</p>
+<p>文章[1]将复杂性定义为系统中可能存在的个体行为的种类数的对数，即利用数学公式表示为</p>
+<script type="math/tex; mode=display">C=log_2N</script><p>式中，C表示复杂度，N表示行为的种类数。</p>
+<p>涌现（Emergency）：</p>
+<p>涌现是复杂性的一种表现形式，系统中的个体根据各自行为规则相互作用，没有通过事先计划，但实际却发生的一种行为模式，其不能够通过系统中的个体或部分的行为来进行预测，同样也不能够通过整体来还原个体行为。涌现并非是随机现象。[1, 3]元胞自动机就是研究复杂系统涌现特性的一个例子。</p>
+<p>涌现所产生的结构、模式和性质是新颖而连贯的。具有全新性，即之前未被观察到的，且具有全局或宏观的“层次”，是整体的特征，同时可以演化，可以被感知。</p>
+<p>自组织（self-organized）：</p>
+<p>一个系统从无序转为有序，其关键是组成系统的各个子系统，在一定条件下，通过子系统间的非线性作用，互相协同合作而自发产生的稳定的有序结构，称为自组织结构。[1, 3]</p>
+<p>系统可以自发地自组织向一个临界状态，这个临界状态对微小扰动反应强烈，称之为自组织临界状态。自然界中的复杂系统在经历了多年的自组织演化过程中，多数已达到其临界状态，同时又会在干扰偏离临界态之后，又会重新自组织向临界态，例如沙丘、冰川等。[2, 4, 5]</p>
+<p>混沌（Chaos）：</p>
+<p>混沌是指由确定方程产生的，由于对初值或扰动无限敏感而表现出的貌似随机的运动。混沌是一种更高级，更复杂的随机状态。[3, 4]</p>
+<p>蝴蝶效应是混沌的一种表现，即初始状态的微小差异可能模拟出截然不同的两种结果。这也体现了复杂系统的初值敏感性。</p>
+<p>胖尾分布（Fat-tailed Distribution） :</p>
+<p>在复杂系统中，传统理论可能发生失效，很多小概率事件并不一定满足简单的正态分布，例如，成年人的身高分布可能满足正常的正态分布，其最高不会超过均值的两倍，而财富的分布则具有胖尾分布特征，最大值可能是均值的数万倍，从而导致均值和方差的难以估计。因为复杂系统各组成成分之间的相互作用、相互依存关系，虽然在短时间内使系统的稳定性增加，但长期会导致小概率事件的发生概率大大增加。[1]</p>
+<p>胖尾分布最终可能会导致马太效应，即获得成功之后会产生累积优势，从而导致强者越强，弱者越弱。</p>
+<h3 id="1-3-复杂系统的特点"><a href="#1-3-复杂系统的特点" class="headerlink" title="1.3 复杂系统的特点"></a>1.3 复杂系统的特点</h3><p>复杂系统的特点可以简单概括为：构成元素复杂、影响因素复杂、相互行为复杂、系统行为复杂、预期结果复杂。</p>
+<p>在文章[2]中，系统的复杂性被归纳为如下几个表现：</p>
+<p>① 系统的子系统间可以有各种方式的通讯。</p>
+<p>② 子系统的种类多，各有其定性的模型。</p>
+<p>③ 各子系统中的知识表达不同，并以各种方式获取知识。</p>
+<p>④ 系统中子系统的结构随着系统的演变会有变化。</p>
+<p>在文章[3]中，复杂系统的基本特征归纳为：</p>
+<p>① 非线性与动态性。非线性是产生复杂性的必要条件。非线性说明了系统整体大于各部分之和，而不会成比例变化。动态性说明系统随时间而变化，通过自组织作用，向更高级的有序化发展。</p>
+<p>② 非周期性与开放性。复杂系统的行为通常是没有周期的，系统的演化不具有明显的规律。系统的开放性，是指系统与外部相互关联、相互作用，开放的系统不断与外界相互交流，复杂系统只有在开放的条件下才能形成。</p>
+<p>③ 累积效应（初值敏感性）。初值的敏感性使得我们不可能对系统做出精确的长期预测。</p>
+<p>④ 奇怪吸引性。吸引子是指一个系统在不收外界干扰的情况下最终趋向的一种稳定行为形式。奇怪吸引子是一种处在稳定和不稳定区域之间的边界。</p>
+<p>⑤ 结构自相似性（分形性）。指系统的部分以某种方式与整体相似，一般来说，复杂系统的结构往往具有自相似性。</p>
+<h3 id="1-4-复杂系统的研究方法"><a href="#1-4-复杂系统的研究方法" class="headerlink" title="1.4 复杂系统的研究方法"></a>1.4 复杂系统的研究方法</h3><p>对于不同的尺度，系统表现出不同的复杂性。例如对于随机系统，在小尺度下系统的复杂度很高，而在大尺度下，复杂度很低。而相干系统在小尺度下和大尺度下的复杂性相差不大，因为描述系统的行为同时也描述了其组成成分的行为。对于相关系统而言，不同的尺度表现出不同的复杂度。[1]</p>
+<p>很多系统存在尺度分离（Separation of Scales）现象，系统行为发生在一定尺度上，远离了单个分子行为的尺度，而中间尺度没有什么行为。例如在较小的尺度下研究地球，需研究地球的结构与物理特性，而在较大尺度下，即以行星视角来研究地球，地球本身的诸多细节都不会对地球在轨道上的运动产生影响。</p>
+<p>分析复杂系统中的行为的关键是找到适当的数学描述，即找到描述相关空间的可能行为的变量。对于复杂系统而言，这些既不是简单的平均值，也不是所有细节的完整描述。[1]</p>
+<p>文章[3]总结，复杂性科学的主要研究方法主要有：理论分析法、模型分析法、数值计算与模拟方法。</p>
+<p>文章[2]中指出，研究复杂系统需要采用定性定量相结合的综合集成的方法。根据系统的复杂机制和变量众多的特点，把定性研究和定量研究有机地结合起来，把科学理论和经验知识结合起来，把多种学科结合起来研究，把宏观研究和微观研究统一起来，将建立在经验和对系统理解上的定性的认识，经过反复定量的计算，最后形成结论。</p>
+<h3 id="1-5-复杂系统的研究挑战"><a href="#1-5-复杂系统的研究挑战" class="headerlink" title="1.5 复杂系统的研究挑战"></a>1.5 复杂系统的研究挑战</h3><p>复杂系统的研究首先存在数据获取的挑战。大数据时代，系统组元的数据容易获得，而组元之间的交互数据较难获取，而复杂的大尺度行为严重依赖此类交互。同时，数据分析方面也可能存在困难，不适当的分析方法可能严重低估极端事件的可能性（胖尾分布的尾部风险），线性假设在复杂系统中也并不适用。</p>
+<p>复杂系统的建模存在挑战。复杂系统的大尺度行为并不是小尺度行为的简单相加，涌现现象难以被建模描述。大多数复杂系统具有尺度分离特性，系统在小尺度上具有很高的复杂度。</p>
+<p>在复杂系统中，不确定性是常态。影响因素可能很复杂，往往难以考虑全面，任何改动的结果可能带来坏的影响而不是好的影响。应对策略也存在稀缺性，可能只有少量的解决方案是有效的。</p>
+<h2 id="2-复杂网络综述"><a href="#2-复杂网络综述" class="headerlink" title="2. 复杂网络综述"></a>2. 复杂网络综述</h2><h3 id="2-1-复杂网络的基本概念"><a href="#2-1-复杂网络的基本概念" class="headerlink" title="2.1 复杂网络的基本概念"></a>2.1 复杂网络的基本概念</h3><p>网络（Network）是由结点和结点之间的关系（边）所组成的图。</p>
+<p>复杂网络（Complex Network）是具有自组织、自相似、吸引子、小世界、无标度中部分或全部性质的网络。复杂网络可以作为复杂系统的一种描述方式，其中结点表示系统的各个组成部分，结点间的连线代表系统元素之间的相互作用。[6]如互联网、交通网络、社交网络等均属于复杂网络。</p>
+<p>文章[7]中指出，复杂网络具有如下几个基本特征：</p>
+<p>① 网络的大规模性和行为的统计性。大规模性的网络行为具有统计特征。</p>
+<p>② 结点动力学行为的复杂性。结点本身可以是非线性系统，具有混沌等非线性动力学行为。</p>
+<p>③ 网络连接的稀疏性。</p>
+<p>④ 连接结构的复杂性。连接结构既非完全规则，也非完全随机，具有内在的自组织规律。</p>
+<p>⑤ 时空演化的复杂性。大多数实际的网络系统同时具有三个主要特征：小世界、无标度和高级团度。</p>
+<h3 id="2-2-复杂网络的相关概念"><a href="#2-2-复杂网络的相关概念" class="headerlink" title="2.2 复杂网络的相关概念"></a>2.2 复杂网络的相关概念</h3><p>度分布（Degree Distribution）：结点的度表示连结该节点的边的数目。网络的度则指的是网络中所有结点的度的平均值。度分布$P(k)$指网络中任意选择一个结点，它的度恰好为k的概率。</p>
+<p>幂律分布（Power Law Distribu-tion）：社会网络中，结点度的分布通常满足幂律分布。假设$k$表示一个结点的度，$p_k$表示节点度为$k$的节点在整个网络中所占的比例，$N_k$表示网络中观测到的结点的度为$k$的频率，那么幂律分布可以表示为：</p>
+<script type="math/tex; mode=display">p_k=\frac{N_k}{|V|} = ak^{-b}</script><p>式中，$b$是幂律指数，$a$是幂律截距。对上式左右两边取对数可得：</p>
+<script type="math/tex; mode=display">lnp_k=-blnk+lna</script><p>可以看到，幂律分布的双对数坐标图是一条直线，其中斜率是$-b$，截距是$lna$。这也是检验一个网络是否符合幂律分布的一种方法。[8]</p>
+<p>符合幂律分布的网络通常叫做无标度网络（Scale-free Network）[9]，现实中，大部分网络是无标度的。</p>
+<p>中心性（ Centrality ） ：中心性定义了网络中一个结点的重要性。度中心性（Degree Centrality）利用的是结点的度，即结点的度越高，就具有越高的中心性。特征向量中心性（Eigenvector Centrality）通过结合无向图中的邻居结点的重要性来概括度中心性。此外，中心性的度量方法还有很多，如Katz中心性、PageRank方法等。[8]</p>
+<p>聚集系数（ Clustering coefficient ） ：聚集系数分析图的传递性，利用长度为2的路径判断第三条边是否存在，来计算聚集系数。全局聚集系数可以描述为：三角形的个数*3与结点的连接三元组的个数的比值。局部聚集系数描述的是单个结点$v_i$，其度数为$d_i$，聚集系数被定义为$v_i$的邻居结点所构成的结点对数目与$(^{d_i}_2)$的比值，评估结点所连接的邻居结点的健壮性。</p>
+<p>平均路径长度（ Average Path Length ） ：网络中平均路径代表网络中从某结点到另一个结点平均所需的最短距离。网络的平均路径越小，则表明网络的连通性越好。计算式为</p>
+<script type="math/tex; mode=display">L=\frac{1}{(^N_2)}\sum_{i\ne j}d_{i,j}</script><p>式中$d_{i,j}$表示结点$i,j$间的最短距离。</p>
+<p>模体（ Motif ） ：模体可能是复杂网络的基本模块。复杂网络中包含各式各样的子图，其中一些子图所占的比例明显高于同一网络中完全随机化形式中的这些子图所占的比例，这些子图就称之为模体。</p>
+<p>模块度（ Modularity ） ：复杂网络内部的结构通常可以被分为不同的模块，同一模块内的结点于结点之间连接很紧密，而模块与模块之间的连接较为稀疏。模块度值的大小主要取决于网络中结点的社区分配，即网络的社区划分情况，可以用来定量衡量网络社区划分质量，其值越接近1，表示网络划分出的社区结构的强度越强，即划分质量越好。</p>
+<p>自相似性（ Self-similarity ） ：网络的局部在某种意义上与整体相似。</p>
+<p>三元闭包（ Triadic Closure ） ：真实社交圈内，若两个人有一个共同的朋友，则这两人在未来成为朋友的可能性就会增加。强三元闭包性质指，若A与B、C均有强关系，B、C之间存在关联，则称A满足强三元闭包性质。强三元闭包能够帮助我们推理网络结构动态变化，并推理出网络节点间的隐形连接。</p>
+<p>结构洞 ：网络中某个或某些个体和某些个体发生直接联系，但与其他个体不发生直接联系，即无直接关系或关系简短，从网络整体看好像网络结构中出现了洞穴。</p>
+<h3 id="2-3-复杂网络的基本模型"><a href="#2-3-复杂网络的基本模型" class="headerlink" title="2.3 复杂网络的基本模型"></a>2.3 复杂网络的基本模型</h3><ol>
+<li>规则网络模型</li>
+</ol>
+<p>规则网络模型是一种最简单的网络模型，系统的各个元素之间可以用一些规则的结构来表示，即网络中任意两个结点之间的联系遵循既定的规则。但现实中，大部分网络既不是完全规则的，也不是完全随机的。[6]</p>
+<ol>
+<li>随机图模型（ Random Graph Model ）</li>
+</ol>
+<p>随机图模型的基本假设为：结点之间的边是随机构建的。</p>
+<p>假设一个图有固定数量的$n$个结点，$(_2^n)$条边中任意一条以$p$的概率进行连接，我们称这样的图为随机图，表示为$G(n,p)$模型。</p>
+<p>在随机图中，随着$p$值的不断增大，图直径渐渐变大，当$p$大到一定程度时，直径开始收缩，在随机图中，直径开始收缩的那个拐点叫作相变，此时图开始变得复杂。</p>
+<p>随机图的度分布满足二项分布，在极限情况下，满足泊松分布，与真实世界的幂律分布不同。聚集系数为$p=\frac{c}{n-1}$，平均路径长度为$\frac{ln|V|}{lnc}$。</p>
+<p>因此，随机图模型能够很好地模拟平均路径长度，但低估了聚集系数。[6, 8, 10]</p>
+<ol>
+<li>小世界模型（Small-world Model）</li>
+</ol>
+<p>小世界模型可以作为完全规则网络向完全随机网络的过渡。</p>
+<p>模型初始为规则格，继而以$\beta$的概率重连边，在$\beta = 0$时，模型退回为规则格，$\beta = 1$时，模型变为随机图。</p>
+<p>在小世界模型中，度分布接近于泊松分布，大部分结点拥有相似的度值，而真实网络中，大部分结点拥有小度值，少数结点有很大的度值。模型生成的聚类系数较为现实，平均路径长度较短。[6, 8, 10]</p>
+<ol>
+<li>优先连接模型或 BA（Barabasi Al­bert）模型</li>
+</ol>
+<p>复杂网络通常具有无标度特性。对于随机网络和规则网络，度分布区间非常狭窄，大多数结点都集中在结点度均值$k$的附近，因而$k$可以看作是结点度的一个特征标度。而在结点度服从幂律分布的网络中，多数结点的度都很小，少数结点的度很大，这种结点度的幂律分布的为网络的无标度特性。无标度网络模型对于随机故障策略表现出更好的鲁棒性，但对于蓄意攻击策略，则具有脆弱性。</p>
+<p>BA模型是一种无标度网络建模方法，其基本描述为：新的结点加入网络时，它们更倾向于连接那些与网络中较多结点连接的结点。</p>
+<p>该模型可以生成较小的平均路径长度，但聚集系数在网络较大时相比于真实网络不明显。同时，BA模型只能生成幂律指数固定为3的无标度网络，而实际的幂律指数在2-3之间。现实网络常常具有一些非幂特征。[6, 8, 10]</p>
+<h2 id="3-复杂网络在地理学中的应用"><a href="#3-复杂网络在地理学中的应用" class="headerlink" title="3. 复杂网络在地理学中的应用"></a>3. 复杂网络在地理学中的应用</h2><p>复杂网络的方法在地理学中有着广泛的应用。现有的大规模地理数据集，及经济地理本身就是一个不断增长的巨大的复杂网络模型。在城市演变发展的研究中，过去的诸多简单的数学模型与统计规律往往不能够反应其内部的规律变化，复杂网络的模型可以作为一个很好的模型以应用分析。将复杂网络的理论应用到城市地理问题中，很好地特稿了城市建模与预测的质量。[11]</p>
+<p>随着移动定位与互联网技术的不断发展，轨迹数据的获取更加容易，挖掘时空轨迹数据中的行为模式也已成为城市地理学中的热点研究方向，文章[12]将复杂网络的方法应用到轨迹数据的分析之中，得到了很好的应用。</p>
+<p>经典的行为轨迹挖掘方法主要基于时间地理学的行为轨迹分析、热点检测等方法，在一个时空耦合系统中刻画个体在时间环境中的行为模式，可以挖掘出在时间空间中的热点轨迹片段，但难以在大样本轨迹数据中找出行为规律。基于序列相似性的测量与序列对比方法等，有效地测度活动时间的序列相似性，但计算成本较大，大数据挖掘的计算效率较低。</p>
+<p>文章构建了适用于多日行为轨迹模式挖掘的分析框架，并采用复杂网络的分析方法进行研究。首先将时空行为轨迹中的事件采用不同的叙事主题刻画，基于不同的叙事方式，度量行为事件之间的事件联系和空间联系，将个体的行为时空路径转换为个体之间的网络。基于转换的时空行为网络，采用社群发现算法进行社区划分，得到不同的社群，以分析不同社群行为模式的异同。</p>
+<p>文章采用北京市海淀区中东部的区域的轨迹数据，进行居民的时空行为模式的挖掘。首先将轨迹中的事件采用工作、上学、休闲娱乐等叙事主题进行刻画，后基于多日活动相似性，利用网络分析方法，挖掘出6类主要社群模式，其社群间居民行为模式存在明显差异。故而该方法在挖掘相似行为的群体特征，识别典型的行为模式方面能够得到很好的应用。</p>
+<h2 id="4-地理元胞自动机简介"><a href="#4-地理元胞自动机简介" class="headerlink" title="4. 地理元胞自动机简介"></a>4. 地理元胞自动机简介</h2><h3 id="4-1-元胞自动机简介"><a href="#4-1-元胞自动机简介" class="headerlink" title="4.1 元胞自动机简介"></a>4.1 元胞自动机简介</h3><p>元胞自动机（cellular automata， CA）是一个时间、空间和状态（或属性）都离散的理想化物理模型。最早由Von Neumann等提出，目的是用其来模拟生物的自繁殖特性。</p>
+<p>一个典型的元胞自动机通常建立在规则的离散网格体系上，每个网格都有有限个状态和有限个邻居，其未来的状态取决于自身和相邻元胞在前一个时刻的状态。元胞自动机的时间是离散化的，整个元胞自动机系统的全部元胞同步地在每个时间同步演化到新的状态。而演化的方法常常不通过解析函数表示，而是用一系列逻辑判断语句表示。[4, 13, 14]</p>
+<p>元胞自动机常常会发生不同性质的演化，可以归纳为：</p>
+<p>① 稳定态：演化到一个永远不再变化的稳定结构。</p>
+<p>② 周期态：演化到一个永远在有限个构型之间按照严格法则交替的状态。</p>
+<p>③ 混沌态：演化到一个永远不重复，而且对初值变化以及扰动无限敏感的。貌似随机的演化状态。</p>
+<p>④ 复杂态：永不停止地呈现出看来似乎是以上三种演化状态的随机交替。[4]</p>
+<p>在文章[15]中，地理元胞自动机的特点被归纳为：</p>
+<p>① 采用&quot;自下而上&quot;的思路，没有一个既定的数学方程，因而具有灵活性和开放性，易于地学领域的应用。</p>
+<p>② 时空离散和并行计算的特征使得其具有强大的复杂计算能力，易于计算机建模。</p>
+<p>③ 在空间数据结构上的规则、离散性，易于与遥感系统、地理信息系统等地理信息技术集成。</p>
+<p>④ 天然的空间动力学模型，适于时空复杂系统建模。</p>
+<h3 id="4-2-元胞自动机在模拟森林火灾方面的应用"><a href="#4-2-元胞自动机在模拟森林火灾方面的应用" class="headerlink" title="4.2 元胞自动机在模拟森林火灾方面的应用"></a>4.2 元胞自动机在模拟森林火灾方面的应用</h3><p>元胞自动机模型模拟的核心环节为：分析控制因素，确定邻居及转换规则，确定初始状态，从而进行动态模拟。</p>
+<p>接下来以模拟森林火灾为例，展示元胞自动机应用的过程。</p>
+<p><img src="/images/Snipaste_2021-11-20_21-25-27.png" alt=""></p>
+<center><code>图1 a,b,c,d分别代表随着时间的推移，森林火灾的情况。图中绿色方格代表树木，红色方格代表燃烧状态，黑色方格代表空状态。</code></center>
+
+
+
+<p>森林可以抽象为二维空间平面，平面可以被划分为若干个同等大小的正方形网格，每个网格可以视为一个元胞。每个元胞可能有三种状态，即0：空状态，1：树木状态，2：燃烧状态。每个邻居可以采用朴素的VonNeumann邻居，即上下左右四个方向的相邻元胞。定义其演化规则为：</p>
+<p>① 树木元胞有很小的概率直接变成燃烧状态（随机小概率事件）。</p>
+<p>② 若树木元胞的四个邻居中有一个是燃着的，则林火传递到当前元胞位置处，当前元胞从树木状态转化为燃烧状态。</p>
+<p>③ 若当前元胞为燃烧状态，则下一时刻变为空状态。</p>
+<p>④ 空状态元胞有较小的概率下一时刻转为树木状态（树木生长）。</p>
+<p>初始状态为每个元胞按一定概率为空状态或为树木状态，并随机初始化一个元胞，其状态为燃烧状态。</p>
+<p>模拟的结果如图1所示。当然，该模型所定义的演化规则较为简单，实际场景还应考虑林地类型，风力与风向等因素的影响，从而制定演化规则。</p>
+<h3 id="4-3-元胞自动机在地理学各方面的应用"><a href="#4-3-元胞自动机在地理学各方面的应用" class="headerlink" title="4.3 元胞自动机在地理学各方面的应用"></a>4.3 元胞自动机在地理学各方面的应用</h3><p>除森林火灾之外，元胞自动机广泛应用于地学的其它领域中。如交通模拟，灾害模拟，土地利用与城市扩张模拟等。元胞自动机作为一个离散的系统动力学模型，在这些场景中有着非常明显的优势。</p>
+<p>当前元胞自动机的研究中，元胞转换规则的定义一直是研究的焦点问题，针对复杂的自然系统，需要根据不同的应用分别转换规则来控制元胞状态的转变。[16]接下来给出一些研究实例：</p>
+<ol>
+<li>利用 GIS 空间分析技术与多种方法相结合的方式研究荒漠化演化</li>
+</ol>
+<p>荒漠化时指包括气候变异和人类活动在内的种种因素造成的干旱、半干旱、亚湿润干旱区的土地退化。近年来，荒漠化已经演变为全球性的环境问题之一，对人类的生存和发展构成严重威胁。</p>
+<p>但荒漠化是一个相当复杂的过程，模拟荒漠化的时空演化，必须探讨影响荒漠化变化的驱动因素和荒漠化演变的综合机理。RS和GIS技术在不断发展，在对多元数据定量分析方面取得良好成果，但动态模拟演化研究仍有不足。</p>
+<p>文章[15]采用GIS空间分析技术与数学方法及实地调研相结合的方法，探讨荒漠化与各驱动银子之间的关系，解释其主要驱动因素和荒漠化动态演化规律，并确定邻居及转换规则和初始状态，从而进行模型的动态模拟。</p>
+<ol>
+<li>案例推理的方法应用于城市演变模拟</li>
+</ol>
+<p>对地理现象的空间格局即演变过程进行模拟和预测是地理学的重要研究内容之一。在文章[17]中，将元胞自动机应用到大区域城市演变的模拟之中。</p>
+<p>传统的元胞自动机的转换规则通常是静态的，它们不随时间和空间而变化。在模拟复杂地理现象时，特别是研究的区域时间尺度跨度较大时，采用静态的转换规则是不合适的，即区域内部由于所处的发展过程或阶段不一样，区域发展空间格局的演变规律不一样，其转换的规则可能随之发生变化，从而需要动态的转换规则。但常规方法几乎不可能获取动态的转换规则。</p>
+<p>文章提出了基于案例的元胞自动机模型来代替基于规则的模型。文章采用案例推理的方法，无需定义具体的明确的规则，而利用给定的案例来隐含表达知识，并从中获取具体的规则，给定的案例可以是一些离散的地理案例。案例推理是专家系统的一种类型，参考过去解决问题的经验，来解决新问题，其实质是通过相似度的计算来寻找与待查询案例最接近的已知案例。</p>
+<p>文章将该方法应用于大区域的珠江三角洲城市扩张的模拟之中，较有效地反映了大区域下城市演变的复杂关系。</p>
+<ol>
+<li>神经网络的方法和数据挖掘的方法应用于土地利用模拟</li>
+</ol>
+<p>除了基于案例推理的方法之外，还可以用神经网络的方法来获取转换规则。在文章[18]中，提出了使用神经网络的方法。在模拟复杂土地利用变化的模型中，所使用的参数可能很多，确定参数的难度较大，同时，采用启发式的方法来定义转换规则，受主观因素的影响也很大。而将神经网络方法应用到系统中，模型的参数可以通过训练数据自动获取，结构比较固定，同一模型结构可以应用在不同地区及应用领域，只需提供训练数据并对模型进行训练，即可获得理想的模拟结果。</p>
+<p>此外，文章[19]提出了利用数据挖掘技术，从地理信息系统和遥感数据中发现知识，从而构建模型的转换规则。这一做法的有点事能从大量的空间数据中自动发现规则，并能够在生成转换规则的同时，对模型自动进行纠正。</p>
+<h3 id="4-4-地理元胞自动机研究现状"><a href="#4-4-地理元胞自动机研究现状" class="headerlink" title="4.4 地理元胞自动机研究现状"></a>4.4 地理元胞自动机研究现状</h3><p>近几年对元胞自动机的研究趋势大概分为以下几种类型：元胞及邻域的扩展研究、三维元胞自动机模型研究、矢量元胞自动机的研究。[16]</p>
+<p>传统元胞自动机对其邻域的范围限制较为狭隘，现实生活中规则且邻域范围严格满足其规则的地理实体相对较少，故而需要对元胞空间与邻域范围进行扩展研究。</p>
+<p>随着城市的日渐发展，城市渐渐体现出立体的空间组合形式，因此，二维的元胞自动机并不能够准确描述当代城市发展的扩张趋势，三维元胞自动机的研究以及其可视化的展示成为近年来的研究热点。</p>
+<p>传统的元胞自动机是将空间划分为完全相同的规则网格，适合分析地理数据中的栅格数据。栅格分析在模型建立、数据计算等方面具有明显优势。但并非所有地理实体都适合用栅格数据进行描述，现实中大部分地理实体都是不规则的多边形形状，规则的栅格表达在反应地理实体的精度上存在一定的缺陷。矢量元胞自动机也渐渐应用到地学的诸多领域。文章[20]将多层次的矢量元胞自动机应用到土地利用变化模拟中，模拟结果与实际用地格局相似。矢量元胞自动机进一步丰富了地理元胞自动机的理论与方法。</p>
+<p>【参考文献】</p>
+<p>[1] SIEGENFELD A F, BAR-YAM Y. An introduction to complex systems science and its applications [J]. Complexity, 2020, 2020.</p>
+<p>[2] 钱学森, 于景元, 戴汝为. 一个科学新领域——开放的复杂巨系统及其方法论 [J]. 自然杂志, 1990, (01): 3-10+64.</p>
+<p>[3] 宋学锋. 复杂性、复杂系统与复杂性科学 [J]. 中国科学基金, 2003, (05): 8-15.</p>
+<p>[4] 何大韧, 刘宗华, 汪秉宏. 复杂系统与复杂网络 [J]. 教 育, 2009.</p>
+<p>[5] BAK P. How nature works: the science of self-organized criticality [M]. Springer Science &amp; Business Media, 2013.</p>
+<p>[6] 刘建香. 复杂网络及其在国内研究进展的综述 [J]. 系统科学学报, 2009, 17(04): 31-7.</p>
+<p>[7] 方锦清, 汪小帆, 刘曾荣. 略论复杂性问题和非线性复杂网络系统的研究 [J]. 科技导报, 2004, (02): 9-12+64.</p>
+<p>[8] ZAFARANI R, ABBASI M A, LIU H. Social media mining: an introduction [M]. Cambridge University Press, 2014.</p>
+<p>[9] ALBERT R, JEONG H. Barabasi AL: Error and attack tolerance of complex networks [J]. Nature, 2000, 406(6794): 378-82.</p>
+<p>[10] STROGATZ S H. Exploring complex networks [J]. Nature, 2001, 410(6825): 268.</p>
+<p>[11] ANDERSSON C, FRENKEN K, HELLERVIK A. A complex network approach to urban growth [J]. Environment and Planning A, 2006, 38(10): 1941-64.</p>
+<p>[12] 张文佳, 季纯涵, 谢森锴. 复杂网络视角下时空行为轨迹模式挖掘研究 [J]. 地理科学, 2021, 41(09): 1505-14.</p>
+<p>[13] COUCLELIS H. Cellular worlds: a framework for modeling micro—macro dynamics [J]. Environment and planning A, 1985, 17(5): 585-96.</p>
+<p>[14] 周成虎, 裴韬. 地理信息系统空间分析原理 [J]. 科学出版晁怡 地理信息系统分析与应用 电子工业出版, 2011.</p>
+<p>[15] 陈建平, 丁火平, 王功文, et al. 基于GIS和元胞自动机的荒漠化演化预测模型 [J]. 遥感学报, 2004, (03): 254-60.</p>
+<p>[16] 赵莉, 杨俊, 李闯, et al. 地理元胞自动机模型研究进展 [J]. 地理科学, 2016, 36(08): 1190-6.</p>
+<p>[17] 黎夏, 刘小平. 基于案例推理的元胞自动机及大区域城市演变模拟 [J]. 地理学报, 2007, (10): 1097-109.</p>
+<p>[18] 黎夏, 叶嘉安. 基于神经网络的元胞自动机及模拟复杂土地利用系统 [J]. 地理研究, 2005, (01): 19-27.</p>
+<p>[19] 黎夏, 叶嘉安. 知识发现及地理元胞自动机 [J]. 中国科学(D辑:地球科学), 2004, (09): 865-72.</p>
+<p>[20] 孙毅中, 杨静, 宋书颖, et al. 多层次矢量元胞自动机建模及土地利用变化模拟 [J]. 地理学报, 2020, 75(10): 2164-79.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/blogs/" rel="tag"># blogs</a>
+              <a href="/tags/Complex-System/" rel="tag"># Complex System</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/23/SpatialAnalysis/" rel="prev" title="《空间分析》课程笔记">
+      <i class="fa fa-chevron-left"></i> 《空间分析》课程笔记
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%A4%8D%E6%9D%82%E7%B3%BB%E7%BB%9F%E7%BB%BC%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">1. 复杂系统综述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E5%A4%8D%E6%9D%82%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 复杂系统的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E5%A4%8D%E6%9D%82%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 复杂系统的相关概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E5%A4%8D%E6%9D%82%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 复杂系统的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-%E5%A4%8D%E6%9D%82%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 复杂系统的研究方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-%E5%A4%8D%E6%9D%82%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%A0%94%E7%A9%B6%E6%8C%91%E6%88%98"><span class="nav-number">1.5.</span> <span class="nav-text">1.5 复杂系统的研究挑战</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E7%BB%BC%E8%BF%B0"><span class="nav-number">2.</span> <span class="nav-text">2. 复杂网络综述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 复杂网络的基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E7%9A%84%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 复杂网络的相关概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 复杂网络的基本模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E5%9C%A8%E5%9C%B0%E7%90%86%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">3. 复杂网络在地理学中的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%9C%B0%E7%90%86%E5%85%83%E8%83%9E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AE%80%E4%BB%8B"><span class="nav-number">4.</span> <span class="nav-text">4. 地理元胞自动机简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E5%85%83%E8%83%9E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AE%80%E4%BB%8B"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 元胞自动机简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E5%85%83%E8%83%9E%E8%87%AA%E5%8A%A8%E6%9C%BA%E5%9C%A8%E6%A8%A1%E6%8B%9F%E6%A3%AE%E6%9E%97%E7%81%AB%E7%81%BE%E6%96%B9%E9%9D%A2%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 元胞自动机在模拟森林火灾方面的应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-%E5%85%83%E8%83%9E%E8%87%AA%E5%8A%A8%E6%9C%BA%E5%9C%A8%E5%9C%B0%E7%90%86%E5%AD%A6%E5%90%84%E6%96%B9%E9%9D%A2%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 元胞自动机在地理学各方面的应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-%E5%9C%B0%E7%90%86%E5%85%83%E8%83%9E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%A0%94%E7%A9%B6%E7%8E%B0%E7%8A%B6"><span class="nav-number">4.4.</span> <span class="nav-text">4.4 地理元胞自动机研究现状</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Yang Jiaqi"
+      src="/images/yjq.jpg">
+  <p class="site-author-name" itemprop="name">Yang Jiaqi</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yang Jiaqi</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
