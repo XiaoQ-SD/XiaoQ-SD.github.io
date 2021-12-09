@@ -21,21 +21,19 @@
     var CONFIG = {"hostname":"xiaoq-sd.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="《地理信息科学》课程笔记。">
+  <meta name="description" content="这篇文章被加密了，需要输入密码查看哦。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《地理信息科学》课程笔记">
 <meta property="og:url" content="https://xiaoq-sd.github.io/2021/09/19/GIS-Notes/index.html">
 <meta property="og:site_name" content="XiaoQ&#39;s Blog">
-<meta property="og:description" content="《地理信息科学》课程笔记。">
+<meta property="og:description" content="这篇文章被加密了，需要输入密码查看哦。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://xiaoq-sd.github.io/2021/09/19/images/image-20210919202211681.png">
 <meta property="article:published_time" content="2021-09-19T11:14:43.000Z">
-<meta property="article:modified_time" content="2021-09-23T06:09:05.615Z">
+<meta property="article:modified_time" content="2021-11-24T05:58:33.107Z">
 <meta property="article:author" content="Yang Jiaqi">
 <meta property="article:tag" content="GIS">
 <meta property="article:tag" content="blogs">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://xiaoq-sd.github.io/2021/09/19/images/image-20210919202211681.png">
 
 <link rel="canonical" href="https://xiaoq-sd.github.io/2021/09/19/GIS-Notes/">
 
@@ -228,7 +226,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-23 14:09:05" itemprop="dateModified" datetime="2021-09-23T14:09:05+08:00">2021-09-23</time>
+                <time title="修改时间：2021-11-24 13:58:33" itemprop="dateModified" datetime="2021-11-24T13:58:33+08:00">2021-11-24</time>
               </span>
 
           
@@ -249,220 +247,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>《地理信息科学》课程笔记。</p>
-<span id="more"></span>
-<p>[TOC]</p>
-<h2 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><h4 id="信息"><a href="#信息" class="headerlink" title="信息"></a>信息</h4><p>信息的定义：用文字、数字、符号、语言、图像等介质来表示事件、事物、现象的内容，是对客观世界各种事物特征的反映。</p>
-<p>媒介：文字、数字、符号、语言、图像等</p>
-<p>目的：反映事物与现象等内容的基本特征</p>
-<p>作用：作为生产、建设、经营、管理、分析和决策的依据</p>
-<p>信息的特征：</p>
-<ol>
-<li>客观性。反映客观事物的运动状态和方式。</li>
-<li>适用性。可根据不同的应用场景进行调整。</li>
-<li>可传输性。采用多种方式进行传播。</li>
-<li>共享性。具有可扩展的特征，可共享。</li>
-</ol>
-<p>信息系统：是由计算机硬件、网络和通讯设备、计算机软件、信息资源、信息用户和规章制度组成的以处理信息流为目的的人机一体化系统。（输入、存储、处理、输出、控制等功能）</p>
-<h4 id="地理信息"><a href="#地理信息" class="headerlink" title="地理信息"></a>地理信息</h4><p>地理信息：表征地理系统诸多要素的数量、质量、分布特征、相互联系和变化规律的数字、文字、图像和图形的总称。（空间特征、属性特征、时域特征）</p>
-<p>地理信息特征：</p>
-<ol>
-<li>数据量大。</li>
-<li>数据分布不均匀。</li>
-<li>拓扑关系复杂。</li>
-<li>多重属性结构。（同一现象具有多方面的属性特征）</li>
-<li>多尺度特征。（地理数据及所表示的空间范围的相对大小和时间范围的相对长短）（如不同比例尺下的单线河双线河）</li>
-<li>数据来源多源化。</li>
-<li>地图表现形象化。</li>
-</ol>
-<h3 id="地理信息系统"><a href="#地理信息系统" class="headerlink" title="地理信息系统"></a>地理信息系统</h3><p>地理信息系统（Geographic information system）是一种用于获取、存储、查询、分析和显示地理空间数据的计算机系统。</p>
-<p>地理信息系统以空间数据库为基础，采用地理模型分析，实现地理信息的采集、存储、检索、分析、显示、预测和更新。</p>
-<p>地理信息系统的本质：真实世界=&gt;数字世界（点、线、面）。</p>
-<p>地理信息系统是地理学数字化和定量分析的工具，地理信息科学是地理学中的“数学”。</p>
-<h4 id="基本特征"><a href="#基本特征" class="headerlink" title="基本特征"></a>基本特征</h4><ol>
-<li>横跨多学科的边缘体系。</li>
-<li>数据类型多样。</li>
-<li>数据结构复杂。</li>
-<li>以应用为主，类型多样。</li>
-<li>以空间分析为主。</li>
-</ol>
-<h4 id="地理信息系统的组成"><a href="#地理信息系统的组成" class="headerlink" title="地理信息系统的组成"></a>地理信息系统的组成</h4><ol>
-<li>硬件系统（计算机系统、数字采集设施、输出设备、网络设备）</li>
-<li>软件系统（源代码、公共用户界面）</li>
-<li>数据（图形数据、图像数据、统计数据、属性数据、音视频数据等）（GIS可以把空间数据和其他数据集成在一起，进行综合应用）</li>
-<li>人员（科研、项目管理、软件设计、系统开发、数据处理）</li>
-<li>基础设施</li>
-</ol>
-<h4 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h4><ol>
-<li>数据采集</li>
-<li>数据处理与变换</li>
-<li>数据的存储与管理</li>
-<li>GIS数据查询（GIS空间分析）</li>
-<li>GIS可视化功能</li>
-</ol>
-<h4 id="发展历程"><a href="#发展历程" class="headerlink" title="发展历程"></a>发展历程</h4><p>加拿大著名地理学家Roger Tomlinson博士是”GIS之父“。1963年首次提出地理信息系统的概念。</p>
-<p>GIS技术的发展：</p>
-<ol>
-<li>第一代GIS（1960-1990年）存储、计算、表达和应用一体化的工具式GIS。</li>
-<li>第二代GIS（1991-2000 年）存储、计算与表达一体化应用灵活定制的组件式GIS。</li>
-<li>第三代GIS（2001-2010 年）存储与计算一体化, 提供网络化应用服务的网络GIS。</li>
-</ol>
-<p>我国已做到，研发出自主品牌的GIS软件。（大型、基础软件）</p>
-<p>第四代GIS：</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th></th>
-<th>数据</th>
-<th>计算</th>
-<th>服务</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>传统GIS</td>
-<td>相对静态的测量数据为主体</td>
-<td>组件式的功能计算</td>
-<td>根据应用需求的软件开发</td>
-</tr>
-<tr>
-<td>第四代GIS</td>
-<td>动态异构、时空密集、非结构化的“大数据”为主体</td>
-<td>高性能环境支持下的空间吃力与分析工具计算</td>
-<td>个性化服务模式及庞大的地理信息服务网络</td>
-</tr>
-</tbody>
-</table>
+        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="b3acee6e7740f1573e0b30d27c547fd1a7c3c27d2cf9711a79f22ade46a8912a">a13d62df7364c013d5805f0f061eff9301382f432f843e8eb7b89664e2298cbf176ca5a6835e5dce4c7dfc36266db51ddfb5018b49031bd9ec2670a3a85b31ba975b8aad3affacbc05e9502ff48bcd9122c2bbf9f038555bb827c0a1a6eb8f212d1c6d98e8afc55074c1346d0fbc072e093824b34f03588669e614beb7769e8a86dbfdd54536e0dcf3b9e360313c1bdf55de0238568e6931822331963e6189703ac23c7fa9ccf349e3aa5b014106e0bb3adaffd12391afa32019956b4e5bd647b9a523a15a528c8a5c33c6b7f4b5980366bca24df111999f5f4d735085b15f01081e078db5566f8791106d5e6fe207ac5098f8572e5d7cb9c47e14be3e3894ff2b111153ee15fa3c23935a314b7e64ff216adb160f4feb63f692c368bd23610f9baa6ad410a6194b647d4c759dd675d57313f8a6c9104a67da6d01eb75901b80dd431296396419c745e58090eca3464dd1f0613ce174583bdf90941f638b065b74153f60355c726fe7add74d1967cbb38bccf7a29893d5638d664c312dd604076ebe413b75cad2d2c1e69d7062a512d67274e031e16b5a72833167fa3455cd3058f6c95461436206b872320cc1332efb26d143e1fba3713c446588403bd53bbccbb6582b70157de3506dc37d750d9a35cf7ef53539b7f8c11d601e50aa0c00f14a33c2152971df5562d1912e0d966367b97addae070fab35a8a7456e9c203e02eb6b8db1e0237636279e9b46155529eda3c63daa7c02542fc67351cc3dbb6013af9ecc4cb13d78672290ecb3e4e148318c0b235ff1e6dfb94a8230c299bdd6e3e47fe45dc0ea6b029f9f8eeea00047a2ffdfca295d08c63f72fe402e4ccab5f60b9493fe084e15e7d88ee00e90bf032588091893a2f81c135983e9860cd47013dcd47d2ec11f9b02d92f20b2650429e682a83881cb5df6c82858ed50de8197d10929cc9a4a9196e3e46aaea88e451cd0ed8a3403422d7e65f405d55c04d86a7dd3882b808d320caa2286663b2d0714403f485a288d0a02392aad7b12b915e6154047e3d8f8002d9a3d5cc15b27302099bb3712d649d69318a7d0156a0ea070c50afc08dcd4548687b846d71795b76fe9db4b941efe60371df105ac19668072f82ec3374c0b1b68617ec5d8b182580dae82fc5b6f1b77b572ab4ede36d44f7efed64c304ab7e639c4e2fc88c54cf8f896df1fd360b7ebcaf62fb050ed72f7f79fc11a5773c96dcccbdc1ce3498f79d413e0c2846df5225f39cb304f932cf86b4c976f38224704acd27dddacac41cd80efce6464b639a4459a97f0348ac860d3e7cc67cf2c9ef3cb55e86116dccbd751222b7dd608ce097e571a63fb518de20a31fa826785bdf855cf700c38f9a0a9a2b6bb937857eeec34630808fcbd607f477c65d4fdeafd6fb5909a72114679766917b672a2ed0c9815a3283bb74cfb41be8db1ccd1608549a01026838eca58cb1e64de3d5a60088ed0e10193623ea25169753e1e221bdb71068b24b7f980b88ec82cae33bacf84426084e1e8cea1adae238e35ce1985a3b2af48e8695498cb07466fdaf5ec18bf7e5ffc9425fe5f0f24a99e161c4484613d652922e59757c8a17ed0bd9769706dcbb7a2f7bbec751e67f04226bf14f4c380fe056c109c0376304fb7abcc7edab1bb88333cc5f5f7cfc48d2c87ee8e5fcb171ccb66dd934e415d7b737f79cb93cb5e5d63159a719fafb7a6a725719311965a4e2420871404995c4b25ede0d79012891f1a729eb53fb546db4e11ee64b95f8fe4f139440cefbe66aeb25364b74516a3b59bd5d9ef637c8a52a309e628df8431c00e06abde152a1b69feff03a3f737a00f99923eaab718d194b500ad111e42c98b322e2c31493cfc3740af47fab3d9fc1374109347a1c55934a053ab0e0eacd653b4a24756e66087f748a4a748b9185d55ecd4a485ab29293c86cb297a607f347a962108d4037729558bbf8fed5473e66fff5aa597cf6137fb96e17ba43aa2ab3d293a4a66d8d99ca74a1c7aa423bab214e85656bd51970a06fe6500a172754c00301e02dd9c4f0ec05579c4413faa11870c10050f7642ab3bb1782a730de4e5c8c8e3f6b206875491a0ae006e75464da568b2f540cea6223a031abdad0ad567fd84151832acc3fc2e53fc5fbde1936da9ed7118d034341c49eb0f2c49992401ad5becd54f6a15ea2dcc461de94d3f3d7f03d86d6370e97037249bb68fe680b10810692f56bdc3e5d1b90a81d0cdb06875df7d0bb00c50cb957017e3ae8f9fa8b51e854160b338449a65e290eaace969eeea5f9c0e9520393f4f04a964a8a551d9373d5a357d6b5dd8e2aecd897d5a514ba71841171466441f89387255dd2f917c1bbb07be62a275910e6714353fe150b0932d2f3afc89e246c356b48c38943e5878bd647cfba8f46ae37207bf158642eb5e377ec55be062deb5d69f98de8168e300a8dce80e9ce13709197a398545d93b8d272ed9f2379cdf506f14f26362549050e8b7bb9007f630ea94424b2e831931470b5294938e931a35b96af0a7715a61dbba36681aa5bd7d17419d55c16013cb03584110c9d676fa0638df5731086f74ec1aeb8f96b107410d72827600f76a229df1e44f933c844f98ed20c29fff9de5280c660f4dc3f726c0357d06b1c21860f31ef6f971f72b628602958ebe1d6ad26a05ca8283bb2a45a61b7961b3a0d7e3496243b45896b8f8e02ae5e3f9fd3d4b774ee9c52857ebbccc81aff8246dd757e09f278d8810c0426c4bbc9592110b268d76fc213482ee0a280671d3eaaeadc70768e88446c1ee0d8478fe1a37e975463ea480bbbe675a0db8100972719c1962853e5ffdf6869d1fb6881315f6d123142159584be8f67fc5b0174d8ecf837e88c8ef31f8a0f58ce6a875673dc4e298b32ee4fa034da493c4ca2393dc31debccb13d3f73674f8e29aa79457470d5cbf147574979e0d61bf1d316826590be3ca713a8e59cfd10d68822b5268d0dced5d50e3b3ea51395abd8c4edacdf610ddc3d79d404808522ee6a6cc603a166c84cda02503e250344b035b5331a4b03696285a8caddf869ee8458cb0647015a8558a1dbe30a48717d03ae2c5f2785cf9e0117ec84a581969d3c3c61317b8b62ee5e7153f893a7fee642aea6cb97220e79fc0fc413c7ef2697e43d8e4ecf615d15a66352270999bf42b95dd6e8b8fcf08a25087be74df66a7f4abbd7a6ea07f2393f3bae93ef4bf7cb4030384912eccf7acf69f7c0cc2eb54bcc86cf9f63f3fd3e6bf963651c5ed092e231ae32828b9411818dccb78d1159df0795928b9fe640c5ef7815bacb02e0455c241c70cc9f0f59736a98a441f0db7fedf717904cfb5b99b259e28ba356eae3e708825f92cc9cd0525c3ca5bcc7dfda9c4e67656b22871640191d294816b1c548cdef147cf9895246d52f0ce9cd5c0763bd06f1765fba967451ad7a298dee4216219ac1a951c83884ff5bb35f6ab59ddb720e6eedc32853620e0cc50e52fdc4b555054a552f5353a88bb8d26ebc3907e1d38387de68ed63962b3fe3c4e2c4d3c365451eeef2e7a8380e247fbb0ab9ee7d33fc81f484941b23664e9d42900ecdda89c9bd599f3ecfd5e27e0406f9b0f05083264bdb170dced6bc309e3f1dd9f0b7889bc9a2fb9d551a6f3999ed7ae5c8c72d46885ad42fdfac079d95e161183819b38292c880c75a8903ee4d62f3e24d6ba3813c1773a482a803bbcf62a419fdc4ee5ae753b037e6784398de32a7879e7ea4462bb58b1fa123e8a4bdaa316821ffaf1343da4e6ce00fc5ca140fceb4501149bb214cca768eb917ceb86805ee3664d2cb9edf0b4ed7fc8f2e9e4710e28f5556cfc21e76fd0fa92ee3479dbf6235e3d7d02037e0b4a58de1ec45059d9a94716cd5f991dbf7bb5869771fe76b6c58103161286db84f9e10ad47b83ce3fad68e388de8e480d496b8188acd1f5c0d11b2a9321c75d92ad8bb34f43a78ed6dbed210f1926d42e352b82e71a13d675a899accd078f5a41878f3274ec26935fe59f3368872cd635277a1da165fca4bd82bf8e408ad662e1deafef6891551fa44b15789e46f5c6b2dff3117113ee0854b4ec3ee4d305166d4d71d05ed3fabfee56528afaa5863140a8e81876d8829c1a533e02a5c1da152f3e05244fc0eaf2af432bad79bd8997a7c3a1370237bdba1caab2aecd6fc44d7820a17de6f8c3960289bd6e434155452961e7c181354d253e3f8d7f89fa969d074e126773bf38593e5019cceecc6d3278d7030f71b2acfb4181fd4a6ada3ee4818e6e8bbcf9cb649ce1037c3b478bb677ea92a30cec0ec09bbc10d2f146c88a7bb71c31927f90affec8c9c64b405619dc32fb00f09f6297fe78fd255b330d48a229b8a49f523a1f95289ec4a8ced2faf67a06adbd9c445ecb7f380490d181127f9a00921dd1a4544f2e83a16a01573652c1c199151b68c647ab8db13f76a3581a4ead12ad4e45f573f143f142b3ad436d2c28bf90e187cb82219ee93d3d845726ccea379451eca13fcf3406b09022781949e99e8103943f0d240bed94c9fbda527f7e563889dcd3119db680b9d50c9b308abec7ada8935502ff134a72f97f626fd02279f317af5fbc88402d80d0d9bfe65dd14c25a1ceafc7dd0d33e748fd481bc8faa837f55a9bdbe8417ac545bc7380e47f0f6c1192d04ef66c75b51e751c548ec152f232dadb4e063f929002b85d8e3905174175a9e3697c1d4d56be8540a7f290c509d58065515e2230ba3b6282fa99272e2093e283619b5ca05d77dda825fd96ee3e0f16736db6fed671a1bf1d896de93cd5145effc0a1996ff526eebede7f5f3ea9b6a10c4fc055c7ea45e73d29c5812dee8ee42c6490e2e5c7f2faf20567ad2139df7296cd5b0e770cfb91b55efc66428d0d2e7de73f66e7cd408a599d0c011bc231ae63fd3042fbdb215e3d3e058bfaa855e9bb66b923e2e3f35e23fdd37459088d57fff50c81c536eca85a44d8dc00dec3594620ead47022ff7bf9d5be26b9cac466b6fa10d331e9f27eed9a6cc905c047f312b6ff86417cfaffda24b2cca24adc97a26102a6ea216ad566d5e242d405d089238d1cae8d258e7c6bf55e505436fef81af8da6f0e60ea163521c147f8f5c6b22be708cdffb8f9b2cb0690aee515bc0b420d32859eefa31ba0029a83615766b89ff3ae00a9d97c581fcd713fa8071897fad3f213b70d0a0cdd05eec24641a73e4ada0042c502fcc6ecaf61ff0df8db63eadd5850b4366ebc3ffe0dba2c3a663624f132bd06b062cca9e634fd2ec89e92eecb147266854d98f6a49a6a93248ecca8547b08f203572d97bba3f55ad0eebc87c4cd0630469fac30ab1993d9617e7775187be0e9ff0dcfa0627fa46725dd2bda12c51769c057d0ba42e2dc1ee153a57f901195eddaf19f84b62e965d8692cbd9f8cb0a2274a8230556fc340f50a6a38615687c9a427d273d1f274f96ce1fd4ca6e32fb4d9ab2811786a33e175d96ac4c6a94232e5928f9dde6d08e856a4b6b4a4846ba9b0598d0fbdc67b5bd65137ba21b1403dc49d6d14a4ba58cd3fe172fab74c3515a9ffa0810ded4c01fe8c732ccefd29d00a718c4dc4a5818d02487cb4c5d9cc235f69db2b0c22f1e747aae6aa21c71d79d5feb309f06f295355d1f8551eeff630bc75807bc546247af864dcbbe2d03e8825534d7cbf8434dbf6f5463cd84ad7bc8da751ec5a96ef98c4dd312cb5e4a1af46859c87a4fa3230a0d83fd4b70e7451fad885c80fcf44b72c15c48e81a8af91bb98d282e536f8ff4a20e35ffe714ea95fc178685312d0546ebf11738d11bd6dd738b691a0d7dcaf542a912b4fb9a6035c55e86e058463c24c87ca3fd3aa3ff52492c3442da41326a254e9061b5a73f369455e6a0338aaf33f0c6da820681a160a41b0dccefdc4fc5c83fdec75dcfb3b241e9e5cb817b84d08ff221de8a7f5a7776f5a96d2139cd2718842d0efd13fd73fad4756aafc80dcfab034bc48e76b925fcace37d149b785109bdf598d1090798e0ce59b55d30e2833e390d1569f3bd067e972849e8589165f4c9e88139a01e26963c92b3c9bff8fad129010ccd4ce8df8782a2232924307fa4ab39327114975a8495e14536c92eb2e5eaf8dac2732d7c02313c2f967c8499c9e2d0923ff9f51a158533d6a7ea98e982affa657c65df62336f8f472ccc5de9222abb25bc5d47cb3580e675284225f449d824ac3e64fc85566b3bc3d6e4919afa4aa62ad481f1e99e8e30c17c2f258ac9bce6a42ed923e0e234c13f8688c48485c938cb598f076a21aa7091b03ab1f61353a34515b253183f59d7342c5e4f56258abdaa482d7c1dbe401c40efebf6ba8d046c4efe72dab1bcf40eec997c6d2e542d1a19c4cc827840e8dbd46d58bbbeee083013ad8202db91dc487279921a96ab496515a4210c253bd641ca9b458fadab36b35467d98c406aa829341f752be8315b9f8fcc3a4ecf682877acddd9bb64b1ac343f7c5c228cc5eec71fdfde49495f4cf0acb2680211c0cc6e3f6e2c38dc8d24b8a21a39ca83cfafa88dbe27ffbfa5f30a488282473fc0c2dae3701b547eaf12a74b0aad2d5916749c2fed81f911f7d4ec3cfd4cafb487b5cae3ceecea326dd47bd2f923d4d88f2657ff6e012ad7cfbd2b74beb506868d2740687564e4dd0796e82332391e5b1bef355d257b0692b1bb82788a2c54a25eeb4f5b0f583b8acd170380e181416805c9de09caa82aef377f15c057843d67e1aab630a5e299fbd6110f536fc5266aaf290f4cc259d68bcabfc622954bb6b0d199d6c5b4d3c4ae449e7196e55c39df480fd169334eb60f6332a90739954ed0fc18c7a48f474c27165fb411922c917afc28ccadd80a2dece14d23c1f53e9e60d666cef2522a72c4f4a2adfe028d2a0972f7c51378f4359721452070af5955ff3e8a862c6ea3521356227edf639bbe79ebb5bedd89d4cb0e68a28225178143e834b4dd4d652c45c38a81530a95a426b690d52c80fd54e5d7ad2a00ad8351bdfa1530d323e5926f3c49593e38eac55a961263dd9deb940c92dafc2b859ba27db9e12810d5b988a29fd9d29880e9e73eac519cf1d118d6f8f00624f2d5c40ac99528d98f84972e006ee159968bd79d650d38ca7d748215eaa33b2036eabf3d7b3aa24947d06a4de52e751a94e554a6431a17cfd45516e0291f94f50fc874158a95b44226c2336ca6e1df8536dcb5418c6fe21c45c0e1efaffddff4be50cfb9533d9dbe416ae81a230518784e957e3c7193e732dd19d092af04a7fd73a4c779c016deb5fb0597eef87c0815dfa175a633fbb7f6d3e2f384f2afe57003236c3788fd23ae05f3c11e2fe2aea963aaa870e5515731563494a9bfdd46c1b8b0398ccff259648c8d058f8c7d108af677a67f930813d38e36149878fb84bcec10a00c4cfd461ba43ad71f8725641c363ce6fd3d9adbd47641e7a3082e4a6d4efb89a4f6926eef8b500b630a2da021d9123229b646fdf4e5d759e305845830159a04e3fa532d0997fbafc9596f54fe1dbbb232deaa42b0842b8f856dfee0c67a347444445213d5cb157220d2ea945299abd3500bb5d0744aa6737ffd7d9d897bdc455976d688d2c7c83f5cdf312973a6c90d9b05a81cde374dd04869b24c232e51a3da29356fbd06b97803aac84dd170fb51609f74e0b23f5539417db8c55ea631ff40d8e975c53ae9cc2b64b1bc722730a9bba4153ae36b2701a7a4db09a63a3c70459272f2c9cef9c1fb8d89ae040e36911873e3f24ea5a42f73414d5c9d856a024115e81ad4bca0ce8de55bbc1236eeb5ece929fb3ec2d060ccba17a89bf01a05170a74dacc4dbe28407b6265119a622cbfe636f9994365df7e3573a746ad889d06a01db95ecc98fd50d70852f5203eb6ca935cd7fa477141298946e65a74c7d39267d8169746976dde73a3a1b02c00d74bd43f112e71376803dabe51b434fd238504d9c3acfb20c1f6ae25460a2812b1cd3e88bb203354abc6e60f900ae27756063e1c42767620193bf100dd9585704bdf6803f7f0e69e2861a0b0149c305e819f2179678f15d44b034c8431988eb5089b2ebe83c0a070ea4363a8a170d3b7aa4fbd982349782a880a2d3db7a6258b5b72bfbd5a877d5ce502b852631b8613a98221d8ccb6fc74fec65800d469bd9abd955e705bf55c79d2c295b05c092c47834058819f9fa14cb81cc982ebf223d7eddc38cd197e1684b32faf2d8616591beb09ed64ef5813b623cb2c5cc3f78dec7b367fb3089f015e91fd679cba37bfd28a5e91e394e535543cabfcef9913da143aaa78bb4678b1efe131a022b5f389c143dcd1a381c42bdfa02eae6ec830b6f8f1f9ff741847393731b2fcb4856de487bb2dba4a960f40547942f4841fae34788eb0750a98ea6ccd8d2e0d397fb6cd32b19481f22c5b2fff6b7b0d31a6987a18c5d43a24c0202d33e11bf76851c343f62e601e12dbdabb745b414b47a8ea0fdfc285c0b6958a68e53444f1e9cca7600e68dd6101a2ec25599a54f0dad60c71e94b41ada1593c2809f4cfaeab7a448247cea7f13c9ca09c672e460cd738b940d0d1128d0ffd3e79a256b179b5747c839c9fc55bbf6cb9a9b6f304e4663374403c2c816edea69979606578dbf52970510cf6a17d94fda138dce3065fb6e9d5d406ce39d1694cdc576a4d6e9e9c8e6cc277abeac7efb5f3740519476083d7a7d9dc33cfea622169b514e3e358a91bd713a56ddfd6380c08b226d8396fdd068c0ddbfe6d14d129262e2959ddcc5a40399aeb02d9026bbcd3581003a8d6e486a5b54ee2aafc98d3b872b523add84ed2a773f9867a0e6823f64ca450aa906aac18234e5db30b15dcdcdeb6c8df2ee4a99122425b572a4d43d243c57caf7385301e11c17ef25d13044db14e86d6771aebd8fce3abb31638cff6034f8c59a0da27951a597ba1f53f810b1148d2fb094a9a5aa295a6c82d651e2e1bc4fd50b338b6c0ccd14a162048c40d5c5a5bfe8de33c22ee3c100cb72e51b6337db981cac18b230633c3fd970614d2a24ec28a2263dc620fe96498c177ce02a55db54fbd94ab004619c3210b6b4cb0e45801203461bd6e6aff8521ec878a81cb11684b8b9f093f41b61acd533dc883be264f5d4107f1f2fdcd026a8404aad49b38b1054456dd15509b841f74541d53456d2667367a75772d5ae067889f83f1c83dd8c2b982dd5eb5158fac6c66ea676c6dc2cfe58a736f3d70710ae8cb65260bc5c1d89e16b6e53465766cf02bb884ee4c205d23e76851a1441886a70bb3d1cf963cae53c4bcf0e44540f4d53ba36e639c6667ef9db76342ed527878c9b1c136c7ebb3d84c4b4e52b1a2e965ba5010a3e470b61095e616df6f976674b507784797c7cc939cfcaa4c68e710fc4ecfc3f647c217bcb67cc4d4b211a7291d2697bbc5f311ed7af38261738728e233d349600ef5c0c17eabd45eb76fa6aaebdd0cea99b0794cfdb3e5b5d18e5169460e47c2b56ab91e004e4cdf466b1cdb570792c9e040f8ab6ab3f514f94958a0f9ce876a7ceed8bbd048370c78eceae49a6c1abde210413d8987d9e5a8d23bce839b4306671c5fb1b16b614350a295abdb62389eec08519e670a9b89bc6827d51de4c57744cb41782bf8fc2e1acdbc04700a357a073eedeec6c9b3448b9243b45e939772308c9f228eb4bce0d8e75e0af85088a79d6b82e951aa0d7e68d89e60a0189962b30ad104ed34b283bfb4c70e4149528179a418a1b82b66bec3e9b80a1736325e6734b775d74690313794afed469c60e369e50a3822cb13d1f1d3f6841157473c9086aed672e4bc71460874d776ddd16d90ba2cfd832e6264fa553d93efcade1c58fc35e0af75cd427e0a7311f5c2b821195b295d89753ff286664452fa761bb316c193bfdb4f77e755b95f1a949b388dd9bb7e8f700a8defb7b253f1f458c979f3f87d403596ea7ae338de1e7cd2875e7b9d39c09535c028fbf7fe136d795002ac9f14406ed1886bbd7c5a9a32b215ae26b2cc5b6d00ccf05b6cb86688cb8e4fa7e7e2035ef07e98c3f4e90a9ef37d5036aa3af9181cde9ba0b3965512f1d68b7f558bc32031235b4a45276fa4916f875513b0d37aa51c3f34abec3d8d0653889e8b2dc70b8d1ebed6843a80f63e6917d46fe09a85423c437e8a5290e84a65defa9bf0f6f4579c9a7b5eae1698125b9334daed98d6c257087c787ec8e7e131b7c31799a58b2693987cdcf3639d5279d9ae3ab85cf701384722d7088196519709588aa79eb9b4a6398d0265338c34d9f7491d764526d0423f1b5cd42e914cb8634c4828d0de3259882c7bb2c04a9d782598d83a3f984dc446cd6c48a9940f869704246e4fc384042cd59c0bcfa31b5c1f7d7c776c0c5c5e89009bb214a7a62025752b7ca66ef566d6638349f79def4d7a64a2a69a4bca50858263e8d841d307c48eb01c6bbeff4b88e84f27f66e7dbcc3f27402194369f507fa967fba0941dfcc7e4551342613f764ad47608a27dec5f4a86a2d913eca852e5a32f3d1b75b900b4cbb3b9853337837b36711cf2425fbf11e0ec07b19225ae5b063bcaa47098aca2e5f996dddaba7b2fe9b53ba82dd5c19c15dfeb8bb4e0151a625bc40c1cc73f8a989b14699ead68ccfd2c287c3c455596851e2fcf76ba9cc3784aa8c1fb3a3fb51914dc83810a4ee6619c340ba599a5598b92e22faa0ea75af7b2ecf693d41580398bfcfd73399ee938fde45376d2d74cddf969ca6fbbf6a65e3437a1e4962c35bc4597b15568c916ec5b033fe1f8128fbb5a671fb66a989f731122f8071b6473b773385a41ea7b004bcab67c25f3ca48a52d628a1d328587c73fef8194ca1c5dc16bbd783de70adfb207db7b1db6b3b304fd4a808734ecd9f2b1f1d9de511e752461259e1616bb1901478838febf98fabd5572d1a4f6fa82389b4837fa877f780f2cfda12ef3173f7507a2799db82c5550afa0cafab18ea79d2770eb442cffda26c45ca114035f42da7958a25dd9cd2872b525d934852e5c8376e667aa8701114e0dea40785777b44a391f7d2a3e4639645c8f086f97edc8eeb865304e2a3af3495fd98df144aa9fecb5447853568af737d3c20e57e3b8bf5d39eb319b4b7ff008cfdb07fffae679a41759b926a7b99b982af1ed060abb463824f7bfc64dacdb4f7586b5d9f5d85dd2721aeb95450ee2758de7bdb1dfbbbd7d8cd76ab6d38fbda94869211ac7856894ea56c0bd8d076f3cc371be2399e7da6ab5513de4b5084e9133fb372a944a3ae4772f85a75e63090406226f5bab000842ffd28ca2bce3b918457efc4ff25869884c7455cb551d3e7a7413668cef97cb58640d6d810df45e36bfa648b97f9ca89b1110783f26a35cce5e291ad99b0b2652ac0df57c4fbf017e01acf4bb9ebc19f3078ae227ce2f462ceb04aa0a1442f23563a293f8529689edd9d9c645477c0015ec7514fae5a20c0e52ec507225a6f73aafee602bd027eb5dcb60d54ced2c8a61cb19524dfc60d72ca83252133e53aa86a97994f4c1e1351c8fc06084d481c42255036c9388f73fbe2a2e73afc8a8ace26b98928bc3ac5a7be9d92fa1d64505a17d09ab4d41acdf3917f4dafca2659f856b9f9e7ab81a6d8b0a9648d6a21678767102b095194b1bc57cc102312e1d8c43b8afb78fc2dd20d374ccca46b3ecf6784d7bfd3cdf5a51e8d5b1b1e0e6cf646e98dbfb9a8256658906b2f800c97c093b8ede2793800313a206d2f5bb72a25669437cac78b21adf4b3377aaef279ecdf84806822953d063eb9c32253ddc19d77a5c6632038cd3d70c993bd31a69def3d4b7a0d3fbbb511ebb3ddf9d91a30a9eb577264d2a2c3aacc97331310bf0a75c49844ef932c915126f2e632738be5104790598d95b5212b4278693fb1b8fd5364a7b74a30a6b728bcce936e5e30b869da9d2bc535326457c8d8fa048b32a20bcb02f4961ff248dc56427857036d9f362c0f13f140803c0747950cee8ca09baf2d0142e3a9bfa557c5acb14a3803b77de0ee3b382a2e036cb3e838e14c7cd62c33c1f9a01dbcdb4d9e597c8ccf5dcfa815ac2e96760ad9474c156f577eaa10856e8e4aa055c6088bc2ef4c873a2b52ee642759a1896a43802043706070d41f1f618d27864676d91d13f64242a8db5d20bd09774d8f764955dcf17e4402049d23c038ce4411b7dac597b6aa657005a58df2980c4105699a458db3e3bc13fa2380c0509927f860eb5f5bd386aebda32a6d72946dcf1e9aa9eb6461a6688b88a5b593c4104bd8fdee6a750aa1c8214ca2f09bb3de929bb0e307b5a7c2a1ab5c4cd4cf930f395abd09335f7849e520346346516d3009b7d080a6850d5be795c8be632b5a266ca5b872d311a6458e9badf1d48ac07c310853b1e0175dddc921e0c1a0ed2a0982f49ed6038f3a907f14c20cdb2de0caae2ff81ef2fe2721ebdb11fa35b357ac7a6e329fc3886295d6654c167490576dcbb600547a35fe693b397422a460bb408c678e0e7ff16e3ae4a558d06ce5bc291bbc9c02c74a4bb2bc683c5351724c97f22439aeafcbbd461bf77f4c2ff4d5111f8a471ae7207cf5ef6bd8172cb4ce619fcdbf15f70340bbbb21ac1c164fa40a09ba1115239d220686a91983384260faa674bbb1286cfcea961e66f5f30d530d89a48258e3eabfd269e4a6fcfdf22ed6b61c0f60e192e759ccaac374e2f327dfb7d17524219223f96d43968aed057e89b4ffb5f9985626bdc99b3235ff572c657171940b1ddf6be3b038ab4ced077a34971b8c900d6ee72ed9a3a6036bdfae80a9b2b18d35fcb5a7a7995acaf70445c6e2c4c0aa24f340d76205fbc7d13abab2004edac64756be7d8039572bec8940c0c74166ca06643cc91e13c7fb4c2214eb260628ce04a39e4fd2795f3d8d7d78f88841c566a9e0771e108d54b4874c265459410c701886da5d63f2cd89e86758730cd2cc0e3cf984249260e5714c932ce5885c2982a39ab07e95c78c584837af5b37fc35a9f065660faf611fae44d2ef0eecf90d2dc2d559fd52a4d32de7ed4d9b15877cc4247291ddef66ab8369f2f3df3f82b38fd0fc54a363fd92faf4db98048c6742a9a7d573a0041656236193afc589f0289b14bdabc51123e275c9c72e7597fec872f34d5fe3e3cdea49eb73aa418898b7d6c52d295eb9625480f38998c2d97f8f67753e02496183d930fa620cce7b8fdfd85fa1e9fbde0806583fae4bc2fc125382e91ac622c96fe4a9c558028e68243d0add421ed99b09a667f2b764e04c80c8c114ffc7a177206765fe5c2058f23738fa8609c48846150465122fafcb9eb6c6a9506cd23e76b434099a48d5b0386376e4394c85d721dc7b07107a0a38ea89a447879e083b32719838c16dd702f3dfe1272c221b9b59ad479b1d3b6cd2a5e7aa6975ea94c83f620caa0c14a8da3ef5c8290edd16ae2d304ba87374d24853f3aff5f82b81c8f8bca8c0a2c8e571d9c04e0dbb68c66a54757e6c365770fefc1dff776e40d3a8d6b798be029f98dcf0e2baccd3e5e74c4df2916036b7ad3e4abd14705f983d6a82c129a52c5aadae340052ac5c9740ce49c3664df408468d251fcae96181768e094180da34c7dff15dbf8c082350af2a3800659e7d0db159c23b79153c1702a2076eb5dccc848146e3dc28701ec9fd062ae0d55ace0fa0044a8474583de10dfa8ce151b5e96493bce8f19475344c5918c09b83cf775c124eee0ee945ac72dea3798ab955e989e6ccc0bf4a174eb72684b08c6010e6c00a733547032d45382727ddc3bafbed59d097416314f517764f60bee56b1f76ab36dc6a161850995c6e53e88d77bb9d428da0c2adbd59dfa59556fea9fc07e29f92f10629b2eeda7e45581049bddad162d1fff620d71883d3699e7fd12faefc1a837d0865a47dce294beebc1affdc95e3f247e25308b9ccb8e2a91296a581fe6aa1d620cccc031aa6f5ced9aec79cd8716e2fdf5aca3fa085c7c7fbbd61689f0e02d816a5f13b9fe644aa909569eacb76222aae2527558a58ee84c08d86de43a87645afc0830b911c28344bf054781aa28c96596695f4094bcc900fafa67ba20ffa3aedf4ca5ec18d7936366a00f399132a41e6294df95cf3f0dd7bbbe62cebcbf484ef0dbfcb36dbf1c56b224de95f91f82aff062de8f5ed50ecaf3b5ad246fcd95a17318f608ed313417ee62c280406e29f5aa6851cccda83f3cadefb2b94b1d21a7fedc066b32598e3a554bb95d5f5ee5acbde2dfc535d5f9ebd7e315ad22310e6e144d4f798ed1affbda26a792687e7a81cceffec89fb4c9cfebfec82369850911de0bd2638ea3c9edd8c7b57af76b394b99a7493d1d89c5cd837ab824a67fc97b4e4c5ee67ec19ffd21d5352fd0c5f777a84f93196fe33a5459d004a8e31991266074e67fc5ada5575542bd25562b76c3278a1a787551b85072290f53cbd86b9bb7cb361bf4c8a596a6954008cd044367b108d5197eacf05bf1b4869ed9df3d1c35a562fbe47fdde1b060673f22e819207b4c4e9a0586acd2ffe7249f498c4a2a393dcceb8ed64c5bcc65b249fdf000f924c32571d4a3578520617b0fc4d1ca128fbd507a8eb17b57f9687365346dbfdda1325674295ca7c7bc40364daca0f2b27f7e668814280c40b29ad26f5a16a67c881f7d7a7cab7a3786e21a485914ecb24e17e697053a84f81dd893f00de518648fdb8556ef4ac0f41b5176d325f643dddedd7975293b08ffeecffc01727eb152f797dd8a200454e68adc7a519fe982fb08f87a61f7c36ccd71780f05b42b3daeef37546009cff693d606afc7c550b43dcd1f581b55f490616c957bcdc756a9704806ab659bd903f5f7e7c32687442aad8fc5fc00bd72283dfe3a848fc242a2ea05a365fa3dec40f8c7c9814c55c8e46b4003763a0ad76617f667e8195fd40cba657a006e7c2f046f5cf7c0d5a543da36d757b3f204590f24690661f9633564fdce4da56af7b63214a61607149069ccc5501203c1649c6443c9027f0ddda3cb526120befbc6d69e03bcc0ae793bc796f7db8799da418ee9d813b7647e8a98cb96b6f67d077d599307f5f58c1197370cf67b04d34c8571d790bc54c53c6ddf3654424a5b8a17c1c2a1d0fbe802ed0a91bd57b7f3921a793c96c0744558e3fee41149e8cb8706a9b33e32bd7edfa9e49637ba74f2927aa8729a6e615316c73b7d2cd49cff4ecc426aa884629ef5dea7528418ad92c6b47b23b17952ba4071c935f6f64ad8768b4237e8eb9dba0d7b02cd50aa4ca4c103b26e364cc50ad8bcb67bd24d6240fa76ba84589ffbe206ae24f02bb1f48e3aa170cef5c0d87e56f3a8713885bd7e6d66c394648ac79014aafcf9e52a1fcdbe7a51f043e5cd255d4e43efcf6d20677e7d5522cc5a142959a50153b099575ccdbdac0da7a35c24b8ee0c92dba96b5f02943bad99886907282756f83656ef90d52215486d8c055a231ea75b6c7e5239a87cd35170c98fcc3de32086660c12eb189b15c12ec150d358adb7fddd17ad72d509944bc5a5a62a6e33afa3b79163ca2f8f88de430b0e0894e79bfd8a8c7d00d9234ac653b809272dfc40d7fd11692271ef349d1508b8ca2f274e6e496f50e68f3d279a60820a9d491d4788693e080fe6feadf16028d8eafa7943fbd61dd59bac0953c55b4b1100b789dda997de405c5c1d4745c6b0c7f5645200509d1125a051833be3a23a3c32c2d4263896f53dac821b328208635ead35606c0e40a1b8f2d01fd567967a0030c7e4aa2bcf8db8dcb4f7242ea85f8759b7744138ee3b652362c09959f0b1744e197395c09fb3ce1bf2c2a14ae3c23b0dd43ac7b2edd43cd525c5ad871b12cf591e71905bfe7f508bddad0d5a9333135f7ffa63c126cdf37434656b34a640018922a650f4898952b15c0c42138bf47134f453219474dcb536a4f641771a29742518de852c2d823bc5d1d4ea4f75a28ab8869d047e12a5f04d5b2cce76177ff7ef9de00fedf4edd005781b0b80e9ef6d424e53fef06f079beead63a8b1ff2550f1f395664190ff3c36cf300cd9bbec0052c7d9f4bce457187d65a47e45c7aec38bc3e1f2d4d81e7f528d05961c6b6c48a2364124f5a16d23678e3574b4dedef4d1639db9b3ff8508aa99e6db305fe05502beb9be88d324838f58111d4f78ccce8c356cffdbe0c82c15281d78037c0958da5cd9e30d331af4f123d969a60abe33427e5f2da4d7dce0dd625fc3690dde0160f525cc622bb16287d498dfccb914db5a79c4ea3c80019fed950d5c447f10d0bd6a8dcc2da434c5c4df4f7642f4bf302f28f49db20df111a92604acfbca9ea96309b20c1220fe25a411f1ba604e5936511ce2f93de9518ee5fcf734eab5315c10969be2f8ce1b54f6e82803409796da76e21a4c54ca2597e183ae05b931a1ae4326db23593e3c13b672d59e616fc2c7150b1aa6bc77c6ff130b1937ad9650183ec78970e1ae604f3fc420bc6a728e2e9479daddfb462a10f90bd2a5c8e22d6c6c4e367f353dcae624e0cdfe298293edca0389491cd46432d77827e9f5937f7a72f3e660412182f0f10ce91d26916133890616e393e94bbbe8d683aefe0a601228d3eee1ad87865c6b2b30d5d9a3dd4203a1cfdc33004202af553b4b988bbc2eb83eb743b8df3ac4e208df96756a717861a1a67523e76c96ee30ff10611edcbe5612f466405254c6ce026db2178b9a8d79b68904d633c9a895e2819bf4c049a6fb9fa93e7cfc738e746f57e1a751a3540b528ecd642473ce881bc0487c67d8143639d2c03ff4cc0dd176fd5f3f26b273a515bad4df190050f225dcb364563a267af4932be9afb2ed6e3a683950f16100d880ef3a35b7a92376be1e28cad6759331cf3dc2af705995861c1c9496ab2fd914b801a1560508694686570adcd37bec87f9e867ea7ff9b5068f6657644e21a9cd544d8c8b1155211aefe46a568bbb6db903650971ec245a0453f9bbda3f5acebd375574760e1d587de66ea2fb28f5e5b61f32a646fefaa00227300bf004b2fcf62e0d6314a38e00fe0cd0c5a0da27348ddf037aa1d38e61a3726dad9422ae8a4e6cc0d1a2174ed80752cd0ba218dfd16d5f766e4efaa63844013c03d41d2c19d792d6a01baa3aa20d3dfa274f19267a03f3dbe34d67c233fb1420af9e2cd856f91c05f605a21474f92cbdf17c6fb8e8572ea3b0b6198db923c5fcf564173a11aad388140a596f976e2b708e85430d25533faecc475b84024438fb77ac947c38a3520d0e1406b51f83eb2dd8ddfe3681cf3c5d1eec16c3830547fd4e61a5e7895c402590dbbdf96a3085fd78a843dda2fdbd0755e4ff98728320429cd9a89e469bf0cc2f7b4be59eb968bc80adafd18cfa473cda3918514ba37c9798254e6d688e3a7dd6e95929bc06b5b8d249a6c7f6ebbf242872c74ceb1c019d997b6529dffe77fac88bdfa7618e62094f7319c8a59a384c1228e15587887f6059828571d15e1ff2f1265deffc75ff28b4c0dddc4448735fedb5193f37e5065b88d8a5e4bf88dae1039ea045dd31faab73c5396bef6542d1f9456944852ebaf784a5eb4c5e472f67ee10e60f2cf17adf8b33dedf3614eac5540c85a5a4ba6a1bbec3ef2c12f7074764df0a1fa9efdfd3f93497ca5ff79bb0bd86f23f7dbdcf397a75018bf312436f89d85a17e869e4245a9afb8b9b251785fae19b94d42d39a15c51598579b08c1c1695c6c17eb37abf685d1f1e6bcc5acee42e0000e374a15620db3cad84272a7e8b2af8508f37a8e6c42a223cdbd2d5848b086d11d76b8f14dbf6924d11b5ba0e941d790ef63cd595fa6ed1ffca52e4f1e128314603bfcd303ca499d9f210d63dd4dca1259690acc86b26532040ef36a04ed6450291eb03958882b41b46b77b697b47f39412cfa9dbf5bcbace8f3d7c08719700ea05147b6ce2f1ca245c533caa934edbfc3fb7f</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>
+      </label>
+    </div>
+  </div>
 </div>
-<p><img src="../images/image-20210919202211681.png" alt="image-20210919202211681"></p>
-<h3 id="空间数据"><a href="#空间数据" class="headerlink" title="空间数据"></a>空间数据</h3><p>地理空间数据，是用于描述位置和空间要素属性的数据。</p>
-<p>地理空间数据涉及空间要素的位置。我们可以使用地理坐标或投影坐标系统来确定地球表面的空间要素位置。GIS的基本原则是，代表不同的地理空间数据的图层必须在空间上相互匹配，即必须基于相同的坐标系统</p>
-<p>空间数据类型：</p>
-<ol>
-<li>空间矢量数据（要素类型）</li>
-<li>空间栅格数据</li>
-<li>空间网络数据（签到表、论文引用）</li>
-<li>时空高维数据（轨迹数据、时空点过程、移动对象）</li>
-<li>空间连续场数据（高程数据、人口密度）</li>
-</ol>
-<h3 id="空间关系"><a href="#空间关系" class="headerlink" title="空间关系"></a>空间关系</h3><div class="table-container">
-<table>
-<thead>
-<tr>
-<th></th>
-<th>意义</th>
-<th>应用</th>
-<th>模型</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>空间拓扑关系</td>
-<td>点线面之间的拓扑关系</td>
-<td>建筑选址、退耕还林区域、综合用地评价等</td>
-<td>空间叠加模型、空间拓扑分析模型、缓冲区分析</td>
-</tr>
-<tr>
-<td>空间方位及距离关系</td>
-<td>地理对象连线之间的方向和距离</td>
-<td>城市流分析、地震异常模式、居民轨迹聚类</td>
-<td>雷达图模型、K-means聚类、轨迹聚类</td>
-</tr>
-<tr>
-<td>空间（自）相关</td>
-<td>变量的属相间存在相关，这种相关随距离增大而减弱</td>
-<td>地球化学元素的分布、人种分布等；全球气候变化、城市功能单元的形成</td>
-<td>空间采样模型、空间插值、曲面建模、空间关联</td>
-</tr>
-<tr>
-<td>空间配置关系</td>
-<td>资源在空间上的分布以达到最大的效益</td>
-<td>南水北调、电网等</td>
-<td>空间优化模型、最大覆盖模型、近点搜索模型</td>
-</tr>
-<tr>
-<td>空间相互作用关系</td>
-<td>地理对象间存在的作用力，包括吸引力、排斥力</td>
-<td>人口迁移、资金流动、汽车流量等</td>
-<td>引力模型、空间扩散模型、空间互作用测度</td>
-</tr>
-<tr>
-<td>空间传播关系</td>
-<td>空间传播过程中，空间实体的性质发生了变化</td>
-<td>流星病的传播、洪水演进等</td>
-<td>传播模型、元胞自动机模型</td>
-</tr>
-<tr>
-<td>空间网络关系</td>
-<td>地理对象相互之间存在物质、能量信息的交换</td>
-<td>人群活动社区、谣言扩散等</td>
-<td>网络传播模型、社区分割、小世界网络模型</td>
-</tr>
-<tr>
-<td>空间复杂关系</td>
-<td>多种空间关系的时空复合叠加</td>
-<td>城镇布局、体育团队对抗等</td>
-<td>多职能体模型、多目标优化、空间运筹模型</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="空间分析"><a href="#空间分析" class="headerlink" title="空间分析"></a>空间分析</h3><p>地理对象的特征可采用不同的空间信息类型进行表达。（地理对象-&gt;表达-&gt;空间信息类型）</p>
-<p>地理对象之间以及内在的模式、规律反应为空间关系。（地理对象-&gt;联系-&gt;空间关系类型）</p>
-<p>空间分析模型是针对特定空间信息揭示某种空间关系。</p>
-<p>地理信息系统功能：</p>
-<ol>
-<li><p>地理空间认知与信息表达（从几何学与地图符号系统出发，构建点线面体数据模型）</p>
-</li>
-<li><p>地理信息获取与传输</p>
-</li>
-<li><p>地理信息存储与管理</p>
-</li>
-<li><p>地理空间分析与模拟（空间叠加分析、网络分析、空间统计、空间时空过程分析）</p>
-</li>
-<li><p>地理设计与决策支持</p>
-</li>
-<li><p>地理信息可视化</p>
-</li>
-<li><p>地理信息发布与应用</p>
-</li>
-</ol>
-<p>地理空间分析的再组织：</p>
-<ol>
-<li>空间查询检索</li>
-<li>空间拓扑分析</li>
-<li>空间统计计算</li>
-<li>空间模拟模型</li>
-<li>空间决策分析</li>
-</ol>
-<h2 id="坐标系统"><a href="#坐标系统" class="headerlink" title="坐标系统"></a>坐标系统</h2><h3 id="空间参照"><a href="#空间参照" class="headerlink" title="空间参照"></a>空间参照</h3><p>地理空间（Geo-spatial）。在地理学上，指物质、能量、信息的存在形态、结构过程、功能关系上的分布方式和格局及其在时间上的延续。地理空间上至大气电离层，下至地幔莫霍面，是声明过程活跃的场所，也是宇宙过程对地球影响最大的区域。</p>
-<p>地理空间被定义为绝对空间和相对空间两种。</p>
-<ul>
-<li>绝对空间是具有属性描述的空间位置的几何，由一系列不同位置的空间坐标值组成。</li>
-<li>相对空间是具有空间属性特征的实体的几何，由实体间的空间关系构成。</li>
-</ul>
-<p>地理空间一般包括地理空间定位框架及其所连接的特征实体。其中，地理空间定位框架即大地测量控制，由平面控制网和高程控制网组成。（地理空间依赖空间参照系统来确定）</p>
-<p>地理空间定量化需要定义一个统一的空间参照系统，以保证对地理空间中的地物的存在位置、地学现象发生的位置与时间等进行精确描述。</p>
-<p>空间参照系统是：</p>
-<ul>
-<li>现实世界与计算机抽象空间的桥梁</li>
-<li>空间数据配准与空间数据复合的基础</li>
-<li>空间数据共享的需要</li>
-</ul>
-<p>地球表面起伏变化是不规则的，数学建模的目的，就是用一个规则的球体或者椭球体表示地球的形状。</p>
-<h3 id="地理坐标系统"><a href="#地理坐标系统" class="headerlink" title="地理坐标系统"></a>地理坐标系统</h3><p>地球表面起伏变化是不规则的，数学建模的目的，就是用一个规则的球体或者椭球体表示地球形状。</p>
-<p>建立地理坐标系统是为了将地球抽象地表示一个规则的几何体，便于数学建模，较为精确地量化地球表面每个点的坐标，从而进一步实现到投影面的地图投影。</p>
-<p>椭球体：</p>
-<ul>
-<li>一级逼近：大地水准面（Mean sea level / Geoid）（重力等位面）包围的球体，称为大地球体（三轴椭球体）。</li>
-<li>二级逼近：大地球体绕短轴（地轴）旋转，形成一个表面光滑的球体，即旋转椭球体（双轴椭球体）。一般称为<strong>地球椭球体</strong>，为世界各国普遍采用。（Global Datum）</li>
-<li>三级逼近：与局部地区的大地水准面符合得最好的一个地球椭球体，称为参考椭球体。通常不同国家采用不同的参考椭球体。（Local Datum）</li>
-</ul>
-<p>地球椭球体，长半轴a，短半轴b，扁率f=(a-b)/a，通常采用一个关键字表示某一特定a、b轴的球体。</p>
-<p>总地球椭球：确定参数时能使它在全球范围内与大地体最密合的地球椭球。（总地球椭球、地信坐标系统）</p>
-<p>参考椭球：经过局部定位和定向，同某一地区大地水准面最佳拟合的地球椭球。（参考椭球、参心坐标系统）</p>
-
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
     </div>
 
     
@@ -546,7 +342,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF"><span class="nav-number">1.1.1.</span> <span class="nav-text">信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF"><span class="nav-number">1.1.2.</span> <span class="nav-text">地理信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.2.</span> <span class="nav-text">地理信息系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81"><span class="nav-number">1.2.1.</span> <span class="nav-text">基本特征</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%84%E6%88%90"><span class="nav-number">1.2.2.</span> <span class="nav-text">地理信息系统的组成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="nav-number">1.2.3.</span> <span class="nav-text">基本功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B"><span class="nav-number">1.2.4.</span> <span class="nav-text">发展历程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E6%95%B0%E6%8D%AE"><span class="nav-number">1.3.</span> <span class="nav-text">空间数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E5%85%B3%E7%B3%BB"><span class="nav-number">1.4.</span> <span class="nav-text">空间关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90"><span class="nav-number">1.5.</span> <span class="nav-text">空间分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9D%90%E6%A0%87%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.</span> <span class="nav-text">坐标系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E5%8F%82%E7%85%A7"><span class="nav-number">2.1.</span> <span class="nav-text">空间参照</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%B0%E7%90%86%E5%9D%90%E6%A0%87%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.2.</span> <span class="nav-text">地理坐标系统</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
